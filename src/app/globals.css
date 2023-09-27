@@ -25,3 +25,25 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* login page bg */
+.loginBg {
+  background-image: url(../assets/loginPage.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* navbar */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+  .container {
+    width: 100%;
+  }
+}
