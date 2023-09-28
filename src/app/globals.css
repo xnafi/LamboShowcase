@@ -33,17 +33,5 @@ body {
   background-repeat: no-repeat;
 }
 
-/* navbar */
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
-  .container {
-    width: 100%;
-  }
-}
+/* navbar Css */
+
