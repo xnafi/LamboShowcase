@@ -10,7 +10,7 @@ const BannerPage = () => {
   return (
     <div className="relative bottom-24 h-full">
       <Swiper
-        // grabCursor={true}
+        grabCursor={true}
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
@@ -19,7 +19,7 @@ const BannerPage = () => {
         creativeEffect={{
           prev: {
             shadow: true,
-            translate: [0, 0, -400 - 400],
+            translate: [0, 0, -400],
           },
           next: {
             translate: ["100%", 0, 0],

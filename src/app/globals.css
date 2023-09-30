@@ -84,7 +84,7 @@ body {
 }
 
 .swiper-slide:nth-child(3n) {
-  background-image: url("../assets//banner/nathan-van-egmond-uwrTwMaxVR4-unsplash.jpg");
+  background-image: url("../assets//banner/shubham-sharan-6NqEMk91ayU-unsplash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   -webkit-filter: blur(5px);
@@ -120,7 +120,7 @@ body {
   }
 
   .swiper-slide:nth-child(3n) {
-    background-image: url("../assets//banner/pexels-adrian-newell-6968984.jpg");
+    background-image: url("../assets//banner/shubham-sharan-6NqEMk91ayU-unsplash.jpg");
     background-position: center;
     height: 100%;
     background-repeat: no-repeat;
@@ -131,7 +131,4 @@ body {
     filter: brightness(60%);
   }
 }
-/* custom cursor */
-.custom-cursor {
-  cursor: url('../assets/loginPage.jpg'), auto; 
-}
+
