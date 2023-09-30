@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 !border-transparent bg-black w-[100vw] max-h-[140px] !z-[999] mx-auto ">
+    <nav className="fixed navbar top-0 !border-transparent bg-transparent w-[100vw] max-h-[140px] !z-[999] mx-auto ">
       <div className="relative flex items-center justify-between mx-auto bg-transparent w-full h-[100px] max-w-[1400px] px-4 lg:px-2">
         <Link
           href="/"

@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <Providers>
         <body
-          className={` ${inter.className} w-full max-w-[1400px] flex flex-col justify-center items-center mx-auto`}
+          className={` ${inter.className} w-full max-w-[1400px] flex flex-col justify-center items-center mx-auto custom-cursor`}
           suppressHydrationWarning={true}
         >
           <Navbar />
