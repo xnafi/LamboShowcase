@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed navbar top-0 !border-transparent bg-transparent w-[100vw] max-h-[140px] !z-[999] mx-auto ">
-      <div className="relative flex items-center justify-between mx-auto bg-transparent w-full h-[100px] max-w-[1400px] px-4 lg:px-2">
+      <div className="relative flex items-center justify-between mx-auto bg-transparent w-full h-[100px] max-w-[1400px] px-4 2xl:px-2">
         <Link
           href="/"
           className="inline-flex items-start justify-start active:bg-none"
@@ -17,8 +17,8 @@ export default function Navbar() {
           <Image className="max-w-md md:hidden" src={logo} width={150} alt="" />
           <Image className="md:block hidden" src={logo} width={150} alt="" />
         </Link>
-        <ul className="items-center hidden space-x-1 xl:space-x-5 uppercase font-bold text-sm lg:flex px-1 text-white menu menu-horizontal h-full lg:text-sm xl:text-base">
-          <li className="hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in ">
+        <ul className="items-center hidden xl:space-x-5 uppercase font-bold text-sm lg:flex px-1 text-white menu menu-horizontal h-full lg:text-sm xl:text-base space-x-4">
+          <li className="hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in">
             <Link
               href="/"
               className="hover:text-yellow-500 active:bg-transparent"
@@ -47,11 +47,14 @@ export default function Navbar() {
         </ul>
         {/* Login And SignUp Button */}
         <div className="gap-5 hidden lg:flex ">
-          <Link href='/login' className="btn-one hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in font-bold">
+          <Link
+            href="/login"
+            className="btn-one hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in font-bold"
+          >
             LOG IN
           </Link>
           <button className="btn-one hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in font-bold">
-          SIGN UP
+            SIGN UP
           </button>
         </div>
 
@@ -136,7 +139,10 @@ export default function Navbar() {
                     </li>
                     {/* Login And SignUp Button */}
                     <div className="gap-5 flex">
-                      <button className="btn-one">Login</button>
+                      <Link href='/login'>
+                        <button className="btn-one">Login</button>
+                      </Link>
+
                       <button className="btn-one">Sign Up</button>
                     </div>
                   </ul>
