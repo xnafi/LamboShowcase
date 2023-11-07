@@ -47,25 +47,26 @@ const BannerPage = () => {
 
         <SwiperSlide>
           <div className="flex flex-col justify-start items-center mt-[10%] text-center">
-            <h1 className="text-2xl md:text-3xl xl:text-4xl text-yellow-600">
-              I don't believe in making a car for the future. <br /> I believe
-              in making a car for the day
+            <h1 className="text-xl md:text-3xl xl:text-4xl text-yellow-600 px-2">
+              I don't believe in making a car for the future.
+              <br className="hidden md:block" /> I believe in making a car for
+              the day
             </h1>
             <div className="grid">
-              <h3 className="text-xl md:text-2xl xl:text-3xl text-yellow-600">
+              <h3 className="text-lg md:text-2xl xl:text-3xl text-yellow-600">
                 Ferruccio Lamborghini___
               </h3>
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex flex-col justify-start items-center mt-[10%] text-center">
+          <div className="flex flex-col justify-start items-center mt-[10%] text-center px-2">
             <h1 className="text-2xl md:text-3xl xl:text-4xl text-white">
-              If you are asking why we are not racing in Formula 1 <br /> it is
-              because we don't want to
+              If you are asking why we are not racing in Formula 1
+              <br className="hidden md:block" /> it is because we don't want to
             </h1>
             <div className="grid">
-              <h3 className="text-xl md:text-2xl xl:text-3xl text-white">
+              <h3 className="text-lg md:text-2xl xl:text-3xl text-white">
                 Stephan Winkelmann (Lamborghini's CEO at the time)
               </h3>
             </div>
