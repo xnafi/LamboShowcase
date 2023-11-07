@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import Providers from "@/lib/Provider";
 import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
+import AOSWrapper from "@/components/AosWrapper/page";
 
 const inter = Inter({ subsets: ["latin"] });
 

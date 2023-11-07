@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { motion, LazyMotion } from "framer-motion";
 import logo from "../../assets/logoWhite.png";
 import {
   useForm,
@@ -36,15 +35,11 @@ const LoginPage = () => {
   };
   return (
     <div className="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat loginBg">
-      <motion.div
-        initial={{ x: -2000 }}
-        animate={{ x: 0 }}
-        transition={{
-          repeat: 0,
-          repeatType: "reverse",
-          duration: 0.3,
-          ease: "backInOut",
-        }}
+      <div
+        data-aos="fade-left"
+        data-aos-anchor="#example-anchor"
+        data-aos-offset="500"
+        data-aos-duration="1000"
         className="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8"
       >
         <div className="text-white">
@@ -113,7 +108,7 @@ const LoginPage = () => {
             </div>
           </form>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
