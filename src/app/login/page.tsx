@@ -8,6 +8,7 @@ import {
   MultipleFieldErrors,
   Message,
 } from "react-hook-form";
+import { motion } from "framer-motion";
 
 const LoginPage = () => {
   type Inputs = {
@@ -35,11 +36,10 @@ const LoginPage = () => {
   };
   return (
     <div className="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat loginBg">
-      <div
-        data-aos="fade-left"
-        data-aos-anchor="#example-anchor"
-        data-aos-offset="500"
-        data-aos-duration="1000"
+      <motion.div
+        initial={{ x: -1300, opacity: 0.1, }}
+        animate={{ x: 0, opacity: 1, rotate: 0 }}
+        transition={{ duration: 0.5,ease:"backInOut" }}
         className="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8"
       >
         <div className="text-white">
@@ -108,7 +108,7 @@ const LoginPage = () => {
             </div>
           </form>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

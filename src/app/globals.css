@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,700;1,400&display=swap");
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -171,38 +173,37 @@ body {
   line-height: 1;
 }
 
-
 @media screen and (max-width: 768px) {
- .swiper-button-prev,
-.swiper-button-next {
-  position: absolute;
-  top: 90% !important;
-  width: 70% !important;
-  height: var(--swiper-navigation-size);
-  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
-  z-index: 10;
-  cursor: pointer;
-  display: flex;
-  padding-right: 5% !important;
-  padding-bottom: 2% !important;
-  align-items: end !important;
-  justify-content: flex-end !important;
-  color: var(--swiper-navigation-color, var(--swiper-theme-color));
-}
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute;
+    top: 90% !important;
+    width: 70% !important;
+    height: var(--swiper-navigation-size);
+    margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    padding-right: 5% !important;
+    padding-bottom: 2% !important;
+    align-items: end !important;
+    justify-content: flex-end !important;
+    color: var(--swiper-navigation-color, var(--swiper-theme-color));
+  }
 
-/* Navigation font start */
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  font-family: swiper-icons;
-  font-size: 20px !important;
-  font-size: var(--swiper-navigation-size);
-  text-transform: none !important;
-  border-radius: 10% !important;
-  background-color: #fff !important;
-  padding: 10px !important;
-  letter-spacing: 0;
-  font-variant: initial;
-  line-height: 1;
-}
+  /* Navigation font start */
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-family: swiper-icons;
+    font-size: 20px !important;
+    font-size: var(--swiper-navigation-size);
+    text-transform: none !important;
+    border-radius: 10% !important;
+    background-color: #fff !important;
+    padding: 10px !important;
+    letter-spacing: 0;
+    font-variant: initial;
+    line-height: 1;
+  }
 }
 /* Navigation font end */

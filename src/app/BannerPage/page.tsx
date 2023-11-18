@@ -9,7 +9,7 @@ import { EffectCreative, Autoplay, Navigation } from "swiper/modules";
 
 const BannerPage = () => {
   return (
-    <div className="relative bottom-0 lg:bottom-24 h-full">
+    <div className="relative bottom-0 lg:bottom-24 h-full font-['Quantico', sans-serif]">
       <Swiper
         autoplay={{
           delay: 7000,
