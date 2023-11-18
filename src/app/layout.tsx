@@ -1,7 +1,6 @@
 import { store } from "@/reduxStore/store";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Providers from "@/lib/Provider";
 import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
