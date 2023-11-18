@@ -13,17 +13,17 @@ const BannerPage = () => {
       <Swiper
         autoplay={{
           delay: 7000,
-          disableOnInteraction: false,
         }}
+        grabCursor={false}
         navigation={true}
         effect={"creative"}
         creativeEffect={{
           prev: {
             shadow: true,
-            translate: [0, 0, -400],
+            translate: [0, 0, -1500],
           },
           next: {
-            translate: ["100%", 600, 400],
+            translate: [0, 0, -1500],
           },
         }}
         modules={[EffectCreative, Autoplay, Navigation]}
