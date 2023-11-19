@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/effect-creative";
 import "swiper/css/navigation";
 import { EffectCreative, Autoplay, Navigation } from "swiper/modules";
+import { motion } from "framer-motion";
 
 const BannerPage = () => {
   return (
@@ -30,19 +31,21 @@ const BannerPage = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div
-            data-aos="fade-up"
-            className="flex flex-col justify-start items-center mt-[10%]"
+          <motion.div
+            initial={{ y: -400 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1 }}
+            className="flex flex-col justify-start items-center mt-[10%] font-quantico"
           >
-            <h1 className="text-4xl md:text-6xl xl:text-8xl text-yellow-600">
+            <h1 className="text-4xl md:text-6xl xl:text-8xl text-yellow-600 bannerText">
               INTRODUCING
             </h1>
             <div className="grid">
-              <h3 className="text-4xl md:text-6xl xl:text-8xl text-yellow-600">
+              <h3 className="text-4xl md:text-6xl xl:text-8xl text-yellow-600 bannerText">
                 SPEED
               </h3>
             </div>
-          </div>
+          </motion.div>
         </SwiperSlide>
 
         <SwiperSlide>

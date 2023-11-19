@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -208,38 +207,38 @@ body {
     color: var(--swiper-navigation-color, var(--swiper-theme-color));
   } */
   .swiper-button-prev {
-  position: absolute;
-  top: 90% !important;
-  width: 3% !important;
-  height: var(--swiper-navigation-size);
-  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
-  z-index: 10;
-  cursor: pointer;
-  display: flex;
-  left: 85% !important;
-  padding-right: 5% !important;
-  padding-bottom: 2% !important;
-  align-items: end !important;
-  justify-content: flex-end !important;
-  color: var(--swiper-navigation-color, var(--swiper-theme-color));
-}
+    position: absolute;
+    top: 90% !important;
+    width: 3% !important;
+    height: var(--swiper-navigation-size);
+    margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    left: 85% !important;
+    padding-right: 5% !important;
+    padding-bottom: 2% !important;
+    align-items: end !important;
+    justify-content: flex-end !important;
+    color: var(--swiper-navigation-color, var(--swiper-theme-color));
+  }
 
-.swiper-button-next {
-  position: absolute;
-  top: 90% !important;
-  width: 3% !important;
-  height: var(--swiper-navigation-size);
-  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
-  z-index: 10;
-  cursor: pointer;
-  display: flex;
-  left: 95% !important;
-  padding-right: 5% !important;
-  padding-bottom: 2% !important;
-  align-items: end !important;
-  justify-content: flex-end !important;
-  color: var(--swiper-navigation-color, var(--swiper-theme-color));
-}
+  .swiper-button-next {
+    position: absolute;
+    top: 90% !important;
+    width: 3% !important;
+    height: var(--swiper-navigation-size);
+    margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    left: 95% !important;
+    padding-right: 5% !important;
+    padding-bottom: 2% !important;
+    align-items: end !important;
+    justify-content: flex-end !important;
+    color: var(--swiper-navigation-color, var(--swiper-theme-color));
+  }
 
   /* Navigation font start */
   .swiper-button-prev:after,
@@ -257,3 +256,4 @@ body {
   }
 }
 /* Navigation font end */
+

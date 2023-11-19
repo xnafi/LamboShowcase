@@ -24,6 +24,9 @@ const config: Config = {
       // => @media (min-width: 1536px) { ... }
     },
     extend: {
+      fontFamily: {
+        quantico: ["Quantico"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
