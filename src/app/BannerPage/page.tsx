@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -6,9 +5,15 @@ import "swiper/css";
 import "swiper/css/effect-creative";
 import "swiper/css/navigation";
 import { EffectCreative, Autoplay, Navigation } from "swiper/modules";
-import { motion } from "framer-motion";
+import { motion, useAnimate } from "framer-motion";
+import CarListButton from "@/components/buttons/CarListButton";
+import { useState } from "react";
 
 const BannerPage = () => {
+  const [carList, setCarList] = useState();
+  const handleCarList = () => {
+    console.log('sdskd')
+  };
   return (
     <div className="relative bottom-0 lg:bottom-24 h-full">
       <Swiper
@@ -45,6 +50,14 @@ const BannerPage = () => {
                 SPEED
               </h3>
             </div>
+          </motion.div>
+          <motion.div
+            initial={{ y: 400, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.2 }}
+            className="flex justify-center items-center text-center "
+          >
+            <CarListButton handleCarList={handleCarList} />
           </motion.div>
         </SwiperSlide>
 

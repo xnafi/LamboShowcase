@@ -46,7 +46,7 @@ export default function Navbar() {
           </li>
         </ul>
         {/* Login And SignUp Button */}
-        <div className="gap-5 hidden lg:flex ">
+        <div className="gap-5 hidden lg:flex text-white">
           <Link
             href="/login"
             className="btn-one hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in font-bold"

@@ -2,28 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+html {
+  margin: 0;
+  scroll-behavior: smooth;
+  padding: 0%;
+  background-color: black;
 }
 
 /* login page bg */
@@ -139,6 +122,9 @@ body {
     filter: brightness(60%);
   }
 }
+
+/* 88888 */
+
 .swiper-button-prev {
   position: absolute;
   top: 90% !important;
@@ -152,9 +138,9 @@ body {
   gap: 10px !important;
   padding-right: 5% !important;
   padding-bottom: 2% !important;
-  align-items: end !important;
-  justify-content: flex-end !important;
+  align-items: flex-end !important;
   color: var(--swiper-navigation-color, var(--swiper-theme-color));
+  background-color: none !important;
 }
 
 .swiper-button-next {
@@ -170,9 +156,9 @@ body {
   gap: 10px !important;
   padding-right: 5% !important;
   padding-bottom: 2% !important;
-  align-items: end !important;
-  justify-content: flex-end !important;
+  align-items: flex-end !important;
   color: var(--swiper-navigation-color, var(--swiper-theme-color));
+  background-color: none !important;
 }
 
 /* Navigation font start */
@@ -190,22 +176,6 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  /* .swiper-button-prev,
-  .swiper-button-next {
-    position: absolute;
-    top: 90% !important;
-    width: 70% !important;
-    height: var(--swiper-navigation-size);
-    margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
-    z-index: 10;
-    cursor: pointer;
-    display: flex;
-    padding-right: 5% !important;
-    padding-bottom: 2% !important;
-    align-items: end !important;
-    justify-content: flex-end !important;
-    color: var(--swiper-navigation-color, var(--swiper-theme-color));
-  } */
   .swiper-button-prev {
     position: absolute;
     top: 90% !important;
@@ -215,12 +185,12 @@ body {
     z-index: 10;
     cursor: pointer;
     display: flex;
-    left: 85% !important;
+    left: 75% !important;
     padding-right: 5% !important;
     padding-bottom: 2% !important;
-    align-items: end !important;
-    justify-content: flex-end !important;
+    align-items: flex-end !important;
     color: var(--swiper-navigation-color, var(--swiper-theme-color));
+    background-color: none !important;
   }
 
   .swiper-button-next {
@@ -232,12 +202,12 @@ body {
     z-index: 10;
     cursor: pointer;
     display: flex;
-    left: 95% !important;
+    left: 90% !important;
     padding-right: 5% !important;
     padding-bottom: 2% !important;
-    align-items: end !important;
-    justify-content: flex-end !important;
+    align-items: flex-end !important;
     color: var(--swiper-navigation-color, var(--swiper-theme-color));
+    background-color: none !important;
   }
 
   /* Navigation font start */
@@ -256,4 +226,3 @@ body {
   }
 }
 /* Navigation font end */
-
