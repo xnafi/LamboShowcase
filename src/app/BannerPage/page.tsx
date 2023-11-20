@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -12,7 +13,7 @@ import { useState } from "react";
 const BannerPage = () => {
   const [carList, setCarList] = useState();
   const handleCarList = () => {
-    console.log('sdskd')
+    console.log("sdskd");
   };
   return (
     <div className="relative bottom-0 lg:bottom-24 h-full">
