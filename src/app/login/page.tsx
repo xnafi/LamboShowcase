@@ -9,6 +9,7 @@ import {
   Message,
 } from "react-hook-form";
 import { motion } from "framer-motion";
+import Car from "../../assets/car.png";
 
 const LoginPage = () => {
   type Inputs = {
@@ -35,11 +36,22 @@ const LoginPage = () => {
     reset();
   };
   return (
-    <div className="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat loginBg">
+    <div className="flex h-screen w-full items-center justify-center bg-gray[#22092C] bg-cover bg-no-repeat no-scrollbar overflow-x-hidden">
       <motion.div
-        initial={{ x: -1300, opacity: 0.1, }}
-        animate={{ x: 0, opacity: 1, rotate: 0 }}
-        transition={{ duration: 0.5,ease:"backInOut" }}
+        initial={{
+          x: 1600,
+          opacity: 0.1,
+        }}
+        animate={{ x: 0, opacity: 1, rotate: 0, overflow: "hidden" }}
+        transition={{ duration: 2, ease: "backInOut" }}
+        className="absolute no-scrollbar overflow-x-hidden"
+      >
+        <Image src={Car} alt="carLogin" className="object-contain" />
+      </motion.div>
+      <motion.div
+        initial={{ y: -1300, opacity: 0.1 }}
+        animate={{ y: 0, opacity: 1, rotate: 0 }}
+        transition={{ duration: 1.5, ease: "circIn" }}
         className="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8"
       >
         <div className="text-white">

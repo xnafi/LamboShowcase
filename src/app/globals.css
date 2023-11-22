@@ -7,6 +7,8 @@ html {
   scroll-behavior: smooth;
   padding: 0%;
   background-color: black;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* login page bg */
@@ -226,3 +228,4 @@ html {
   }
 }
 /* Navigation font end */
+
