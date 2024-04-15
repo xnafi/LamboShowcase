@@ -1,10 +1,8 @@
 import { store } from "@/reduxStore/store";
 import "./globals.css";
 import type { Metadata } from "next";
-import Providers from "@/lib/Provider";
 import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
-
 
 export const metadata: Metadata = {
   title: "LAMBO SHOWCASE",
@@ -17,17 +15,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" >
-      <Providers>
-        <body
-          className={`w-full max-w-[1400px] flex flex-col justify-center items-center mx-auto custom-cursor container`}
-          suppressHydrationWarning={true}
-        >
-          <Navbar />
-          {children}
-          <Footer />
-        </body>
-      </Providers>
+    <html lang="en">
+      <body
+        className={`w-full max-w-[1400px] flex flex-col justify-center items-center mx-auto custom-cursor container`}
+        suppressHydrationWarning={true}
+      >
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

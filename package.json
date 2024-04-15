@@ -1,5 +1,5 @@
 {
-  "name": "lamboshowcase",
+  "name": "lambo-showcase",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,26 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.9.6",
-    "framer-motion": "^10.16.5",
-    "next": "^14.0.1",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-hook-form": "^7.46.2",
-    "react-icons": "^4.11.0",
-    "react-redux": "^8.1.2",
-    "swiper": "^10.3.1"
+    "framer-motion": "^11.0.28",
+    "next": "14.2.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.51.3",
+    "swiper": "^11.1.1"
   },
   "devDependencies": {
-    "@types/aos": "^3.0.7",
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "autoprefixer": "latest",
-    "eslint": "latest",
-    "eslint-config-next": "latest",
-    "postcss": "latest",
-    "tailwindcss": "latest",
-    "typescript": "latest"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }

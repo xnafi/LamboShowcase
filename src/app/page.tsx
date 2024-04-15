@@ -1,4 +1,4 @@
-import BannerPage from "./BannerPage/page";
+import BannerPage from "./home/page";
 
 
 export default function Home() {
