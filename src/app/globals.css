@@ -7,7 +7,7 @@
     @apply text-4xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl;
   }
   .buttonPrimary {
-    @apply text-sm md:text-lg;
+    @apply text-sm md:text-lg border;
   }
 }
 .buttonPrimary {
@@ -22,6 +22,7 @@
 }
 
 .buttonPrimary::before {
+  border: 2px 2px 2px solid white;
   content: "";
   position: absolute;
   left: 0;
@@ -54,6 +55,7 @@
 }
 
 .buttonPrimary:hover::after {
+  border: 2px 2px 0px 2px solid white;
   height: 100%;
   transition-delay: 0.4s;
   color: aliceblue;
