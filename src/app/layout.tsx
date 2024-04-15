@@ -1,4 +1,3 @@
-import { store } from "@/reduxStore/store";
 import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/shared/navbar";
