@@ -1,8 +1,3 @@
-import React from "react";
-
-export default function Banner() {
-  return <div>Banner</div>;
-}
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,7 +10,6 @@ import { motion } from "framer-motion";
 import CarListButton from "@/components/buttons/CarListButton";
 
 const Banner = () => {
-
   return (
     <div className="relative bottom-0 lg:bottom-24 h-full">
       <Swiper
@@ -34,7 +28,7 @@ const Banner = () => {
             translate: [0, 0, -1500],
           },
         }}
-        modules={[EffectCreative, Autoplay, Navigation]}
+        modules={[EffectCreative, Navigation]}
         className="mySwiper"
       >
         <SwiperSlide>
@@ -42,22 +36,18 @@ const Banner = () => {
             initial={{ y: -400 }}
             animate={{ y: 0 }}
             transition={{ duration: 1 }}
-            className="flex flex-col justify-start items-center mt-[10%] font-quantico"
+            className="flex flex-col justify-start items-center mt-[40%] md:mt-[20%] lg:mt-[20%] xl:mt-[15%] font-quantico"
           >
-            <h1 className="text-4xl md:text-6xl xl:text-8xl text-yellow-600 bannerText">
-              INTRODUCING
-            </h1>
+            <h1 className="headings text-yellow-600">INTRODUCING</h1>
             <div className="grid">
-              <h3 className="text-4xl md:text-6xl xl:text-8xl text-yellow-600 bannerText">
-                SPEED
-              </h3>
+              <h3 className="headings text-yellow-600">SPEED</h3>
             </div>
           </motion.div>
           <motion.div
             initial={{ y: 400, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.2 }}
-            className="flex justify-center items-center text-center "
+            className="flex justify-center items-center text-center mt-4 md:mt-8"
           >
             <CarListButton />
           </motion.div>

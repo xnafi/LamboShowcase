@@ -8,7 +8,7 @@ function CarListButton({ setCarlist }: any) {
     <button
       type="button"
       onClick={handleCarList}
-      className="font-quantico group relative overflow-hidden rounded-lg border-[1px] p-2 text-xl md:text-2xl mt-2"
+      className="font-quantico buttonPrimary"
     >
       CHOOSE YOUR BEAST
     </button>

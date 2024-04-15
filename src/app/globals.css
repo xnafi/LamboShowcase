@@ -2,6 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .headings {
+    @apply text-4xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl;
+  }
+  .buttonPrimary {
+    @apply text-sm md:text-lg;
+  }
+}
+.buttonPrimary {
+  background: transparent;
+  border: none;
+  padding: 1em 1.5em;
+  color: #ffedd3;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.buttonPrimary::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #ffc506;
+  transition: 0.5s ease;
+}
+
+.buttonPrimary:hover {
+  color: #1e1e2b;
+  transition-delay: 0.5s;
+}
+
+.buttonPrimary:hover::before {
+  width: 100%;
+}
+
+.buttonPrimary::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #ffc506;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+.buttonPrimary:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
+
 html {
   margin: 0;
   scroll-behavior: smooth;
@@ -228,4 +285,3 @@ html {
   }
 }
 /* Navigation font end */
-
