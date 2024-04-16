@@ -22,7 +22,6 @@
 }
 
 .buttonPrimary::before {
-  border: 2px 2px 2px solid white;
   content: "";
   position: absolute;
   left: 0;
@@ -112,8 +111,23 @@ html {
   height: 100%;
   object-fit: cover;
 }
+.bgWrap {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -1;
+}
 
-.swiper-slide:nth-child(1n) {
+.bgText {
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  /* padding-top: 40vh; */
+  width: full;
+  height: 100vh;
+}
+/* .swiper-slide:nth-child(1n) {
   background-image: url("../assets//banner/alex_rainer-1_lxISUE3F4-unsplash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -182,7 +196,7 @@ html {
     -ms-filter: blur(5px);
     filter: brightness(60%);
   }
-}
+} */
 
 /* 88888 */
 
@@ -239,7 +253,7 @@ html {
 @media screen and (max-width: 768px) {
   .swiper-button-prev {
     position: absolute;
-    top: 90% !important;
+    top: 80% !important;
     width: 3% !important;
     height: var(--swiper-navigation-size);
     margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
@@ -256,7 +270,7 @@ html {
 
   .swiper-button-next {
     position: absolute;
-    top: 90% !important;
+    top: 80% !important;
     width: 3% !important;
     height: var(--swiper-navigation-size);
     margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
