@@ -44,9 +44,21 @@ const LoginPage = () => {
         }}
         animate={{ x: 0, opacity: 1, rotate: 0, overflow: "hidden" }}
         transition={{ duration: 2, ease: "backInOut" }}
-        className="absolute no-scrollbar overflow-x-hidden"
+        className="absolute no-scrollbar overflow-x-hidden bgWrap"
       >
-        <Image src={Car} alt="carLogin" className="object-contain" />
+        <div className="bgWrap">
+          <Image
+            alt="lambo"
+            src={Car}
+            placeholder="blur"
+            quality={100}
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover",
+            }}
+          />
+        </div>
       </motion.div>
       <motion.div
         initial={{ y: -1300, opacity: 0.1 }}

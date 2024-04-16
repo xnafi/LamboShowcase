@@ -33,7 +33,7 @@ const Banner = () => {
             translate: [0, 0, -1500],
           },
         }}
-        modules={[EffectCreative, Navigation]}
+        modules={[EffectCreative, Autoplay, Navigation]}
         className="mySwiper"
       >
         <SwiperSlide>
