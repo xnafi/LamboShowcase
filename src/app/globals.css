@@ -127,78 +127,9 @@ html {
   width: full;
   height: 100vh;
 }
-/* .swiper-slide:nth-child(1n) {
-  background-image: url("../assets//banner/alex_rainer-1_lxISUE3F4-unsplash.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: brightness(60%);
-}
 
-.swiper-slide:nth-child(2n) {
-  background-image: url("../assets//banner/nathan-van-egmond-uwrTwMaxVR4-unsplash.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: brightness(60%);
-}
 
-.swiper-slide:nth-child(3n) {
-  background-image: url("../assets//banner/david-von-diemar-_j2bDuQVEO8-unsplash.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: brightness(60%);
-}
-
-@media screen and (max-width: 768px) {
-  .swiper-slide:nth-child(1n) {
-    background-image: url("../assets//banner/alex_rainer-1_lxISUE3F4-unsplash.jpg");
-    background-position: center;
-    height: 100%;
-    background-repeat: no-repeat;
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: brightness(60%);
-  }
-
-  .swiper-slide:nth-child(2n) {
-    background-image: url("../assets//banner/nathan-van-egmond-uwrTwMaxVR4-unsplash.jpg");
-    background-position: center;
-    height: 100%;
-    background-repeat: no-repeat;
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: brightness(60%);
-  }
-
-  .swiper-slide:nth-child(3n) {
-    background-image: url("../assets//banner/david-von-diemar-_j2bDuQVEO8-unsplash.jpg");
-    background-position: center;
-    height: 100%;
-    background-repeat: no-repeat;
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: brightness(60%);
-  }
-} */
-
-/* 88888 */
+/* Slider */
 
 .swiper-button-prev {
   position: absolute;
