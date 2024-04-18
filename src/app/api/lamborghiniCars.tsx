@@ -1,5 +1,6 @@
 const lamborghiniCars = [
   {
+    id : 1,
     model: "Urus",
     yearOfMake: 2021,
     fuelType: "Petrol",
@@ -7,9 +8,10 @@ const lamborghiniCars = [
     price: "$218,009",
     details:
       "The Lamborghini Urus is a luxury SUV that redefines performance and versatility. Powered by a twin-turbocharged V8 engine producing 641 horsepower, it can accelerate from 0 to 60 mph in just 3.6 seconds. The Urus features advanced driving dynamics, including all-wheel drive and active torque vectoring, making it equally capable on and off the road.",
-    image: "urus.jpg",
+    image: "/src/assets/car.png",
   },
   {
+    id : 2,
     model: "Aventador S",
     yearOfMake: 2018,
     fuelType: "Petrol",
@@ -20,6 +22,7 @@ const lamborghiniCars = [
     image: "aventador_s.jpg",
   },
   {
+    id : 3,
     model: "Huracan Performante",
     yearOfMake: 2019,
     fuelType: "Petrol",
@@ -30,6 +33,7 @@ const lamborghiniCars = [
     image: "huracan_performante.jpg",
   },
   {
+    id : 4,
     model: "Aventador LP 700-4",
     yearOfMake: 2016,
     fuelType: "Petrol",
@@ -40,6 +44,7 @@ const lamborghiniCars = [
     image: "aventador_lp700-4.jpg",
   },
   {
+    id : 5,
     model: "Huracan LP 610-4",
     yearOfMake: 2015,
     fuelType: "Petrol",
@@ -50,6 +55,7 @@ const lamborghiniCars = [
     image: "huracan_lp610-4.jpg",
   },
   {
+    id : 6,
     model: "Gallardo LP 570-4 Superleggera",
     yearOfMake: 2014,
     fuelType: "Petrol",
@@ -60,6 +66,7 @@ const lamborghiniCars = [
     image: "gallardo_lp570-4_superleggera.jpg",
   },
   {
+    id : 7,
     model: "Reventon Roadster",
     yearOfMake: 2013,
     fuelType: "Petrol",
@@ -70,6 +77,7 @@ const lamborghiniCars = [
     image: "reventon_roadster.jpg",
   },
   {
+    id : 8,
     model: "Murcielago LP 670-4 SV",
     yearOfMake: 2012,
     fuelType: "Petrol",
@@ -80,6 +88,7 @@ const lamborghiniCars = [
     image: "murcielago_lp670-4_sv.jpg",
   },
   {
+    id : 9,
     model: "Diablo VT 6.0",
     yearOfMake: 2011,
     fuelType: "Petrol",
@@ -90,6 +99,7 @@ const lamborghiniCars = [
     image: "diablo_vt_6.0.jpg",
   },
   {
+    id : 10,
     model: "Countach 25th Anniversary",
     yearOfMake: 2010,
     fuelType: "Petrol",
@@ -100,6 +110,7 @@ const lamborghiniCars = [
     image: "countach_25th_anniversary.jpg",
   },
   {
+    id : 11,
     model: "LM002",
     yearOfMake: 2009,
     fuelType: "Petrol",
@@ -110,6 +121,7 @@ const lamborghiniCars = [
     image: "lm002.jpg",
   },
   {
+    id : 12,
     model: "Jalpa",
     yearOfMake: 2008,
     fuelType: "Petrol",
@@ -120,6 +132,7 @@ const lamborghiniCars = [
     image: "jalpa.jpg",
   },
   {
+    id : 13,
     model: "Silhouette",
     yearOfMake: 2007,
     fuelType: "Petrol",
@@ -130,6 +143,7 @@ const lamborghiniCars = [
     image: "silhouette.jpg",
   },
   {
+    id : 14,
     model: "Urraco P250",
     yearOfMake: 2006,
     fuelType: "Petrol",
@@ -140,6 +154,7 @@ const lamborghiniCars = [
     image: "urraco_p250.jpg",
   },
   {
+    id : 15,
     model: "Islero",
     yearOfMake: 2005,
     fuelType: "Petrol",
@@ -150,6 +165,7 @@ const lamborghiniCars = [
     image: "islero.jpg",
   },
   {
+    id : 16,
     model: "400 GT",
     yearOfMake: 2004,
     fuelType: "Petrol",
@@ -160,6 +176,7 @@ const lamborghiniCars = [
     image: "400_gt.jpg",
   },
   {
+    id : 17,
     model: "Miura P400",
     yearOfMake: 2003,
     fuelType: "Petrol",
@@ -170,6 +187,7 @@ const lamborghiniCars = [
     image: "miura_p400.jpg",
   },
   {
+    id : 18,
     model: "350 GT",
     yearOfMake: 2002,
     fuelType: "Petrol",
@@ -180,6 +198,7 @@ const lamborghiniCars = [
     image: "350_gt.jpg",
   },
   {
+    id : 19,
     model: "Espada",
     yearOfMake: 2001,
     fuelType: "Petrol",
@@ -190,6 +209,7 @@ const lamborghiniCars = [
     image: "espada.jpg",
   },
   {
+    id : 20,
     model: "Islero",
     yearOfMake: 2000,
     fuelType: "Petrol",
