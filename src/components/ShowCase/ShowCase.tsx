@@ -9,6 +9,7 @@ import {
 import image from "../../assets/car.png";
 import Image from "next/image";
 
+
 const ShowCase = () => {
   return (
     <div className="grid w-full place-content-center bg-gradient-to-br px-4 text-slate-900 place-items-center">

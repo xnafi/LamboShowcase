@@ -1,6 +1,6 @@
 import { LamborghiniCar } from "@/types/AllCar";
 
-const lamborghiniCars: LamborghiniCar[] = [
+export const lamborghiniCars: LamborghiniCar[] = [
   {
     id: 1,
     model: "Urus",
