@@ -22,6 +22,7 @@
 }
 
 .buttonPrimary::before {
+  color: white;
   content: "";
   position: absolute;
   left: 0;
@@ -51,13 +52,13 @@
   background-color: #ffc506;
   transition: 0.4s ease;
   z-index: -1;
+  color: white;
 }
 
 .buttonPrimary:hover::after {
-  border: 2px 2px 0px 2px solid white;
   height: 100%;
   transition-delay: 0.4s;
-  color: aliceblue;
+  color: white;
 }
 
 html {

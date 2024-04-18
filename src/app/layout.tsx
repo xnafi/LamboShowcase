@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${cinzel.variable} font-sans w-full max-w-[1400px] flex flex-col justify-center items-center mx-auto custom-cursor container`}
+        className={`${cinzel.variable} font-sans w-full max-w-[1400px] flex flex-col justify-center items-center mx-auto custom-cursor container h-full`}
         suppressHydrationWarning={true}
       >
         <Navbar />
