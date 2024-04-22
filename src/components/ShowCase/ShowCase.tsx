@@ -8,7 +8,8 @@ import {
 } from "framer-motion";
 import image from "../../assets/car.png";
 import Image from "next/image";
-
+import { lamborghiniCars } from "@/app/cars";
+import { allCarData } from "@/types/Allcar";
 
 const ShowCase = () => {
   return (
@@ -67,62 +68,38 @@ const TiltCard = () => {
       }}
       className="relative h-[60vh] md:h-[100vh] w-[85vw] md:max-w-[1400px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300"
     >
-      <div
-        style={{
-          transform: "translateZ(75px)",
-          transformStyle: "preserve-3d",
-        }}
-        className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg"
-      >
-        <Image
-          src={image}
-          className="bgWrap"
+      {lamborghiniCars.slice(0, 1).map((car: allCarData) => (
+        <motion.div
+          key={car.id}
           style={{
             transform: "translateZ(75px)",
-            objectFit: "contain",
+            transformStyle: "preserve-3d",
           }}
-          placeholder="blur"
-          quality={100}
-          fill
-          sizes="100vw"
-          alt=""
-        />
-        <p
-          style={{
-            transform: "translateZ(50px)",
-          }}
-          className="text-center text-2xl font-bold"
+          className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg"
         >
-          HOVER ME
-        </p>
-      </div>
+          <Image
+            src={car.image}
+            className="bgWrap"
+            style={{
+              transform: "translateZ(75px)",
+              objectFit: "contain",
+            }}
+            quality={100}
+            fill
+            sizes="90vw"
+            alt=""
+          />
+          <p
+            style={{
+              transform: "translateZ(50px)",
+            }}
+            className="text-center text-2xl font-bold text-black "
+          >
+            HOVER ME
+          </p>
+        </motion.div>
+      ))}
     </motion.div>
-    // <motion.div
-    //   ref={ref}
-    //   onMouseMove={handleMouseMove}
-    //   onMouseLeave={handleMouseLeave}
-    //   style={{
-    //     transformStyle: "preserve-3d",
-    //     transform,
-    //   }}
-    //   className=" h-full w-[80vw] rounded-xl bg-gradient-to-br from-yellow-600 to-violet-100 mx-auto p-10"
-    // >
-    //   <div
-    //     style={{
-    //       transform: "translateZ(75px)",
-    //       transformStyle: "preserve-3d",
-    //     }}
-    //     className="inset-3 grid place-content-center rounded-xl bg-white shadow-lg w-[75vw] h-[69vh] mx-auto"
-    //   >
-    //     <Image
-    //       src={image}
-    //       style={{
-    //         transform: "translateZ(75px)",
-    //       }}
-    //       alt=""
-    //     />
-    //   </div>
-    // </motion.div>
   );
 };
 
