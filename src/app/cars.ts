@@ -1,5 +1,13 @@
-import { allCarData } from "@/types/Allcar";
-
+export interface allCarData {
+  id: number;
+  model: string;
+  yearOfMake: number;
+  fuelType: string;
+  topSpeed: string;
+  price: string;
+  details: string;
+  image: string;
+}
 
 export const lamborghiniCars: allCarData[] = [
   {
