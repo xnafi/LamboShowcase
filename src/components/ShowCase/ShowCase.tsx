@@ -9,7 +9,7 @@ import {
 import image from "../../assets/car.png";
 import Image from "next/image";
 import { lamborghiniCars } from "@/app/cars";
-import { allCarData } from "@/types/Allcar";
+import { allCarData } from "../../../src/types/Allcar";
 
 const ShowCase = () => {
   return (
