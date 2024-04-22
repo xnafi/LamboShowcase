@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
 import { Cinzel } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "LAMBO SHOWCASE",
@@ -28,6 +29,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <SpeedInsights />
         <Footer />
       </body>
     </html>
