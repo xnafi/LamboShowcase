@@ -1,4 +1,4 @@
-export interface LamborghiniCar {
+export interface allCarData {
   id: number;
   model: string;
   yearOfMake: number;
