@@ -9,7 +9,17 @@ import {
 import image from "../../assets/car.png";
 import Image from "next/image";
 import { lamborghiniCars } from "@/app/cars";
-import { allCarData } from "../../../src/types/Allcar";
+
+export interface allCarData {
+  id: number;
+  model: string;
+  yearOfMake: number;
+  fuelType: string;
+  topSpeed: string;
+  price: string;
+  details: string;
+  image: string;
+}
 
 const ShowCase = () => {
   return (
