@@ -4,7 +4,13 @@
 
 @layer utilities {
   .headings {
-    @apply text-4xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl;
+    @apply text-4xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold uppercase;
+  }
+  .sub-heading {
+    @apply text-base md:text-2xl lg:text-3xl font-semibold uppercase;
+  }
+  .primary-text {
+    @apply text-sm md:text-base font-bold;
   }
   .buttonPrimary {
     @apply text-sm md:text-lg border;
@@ -128,7 +134,6 @@ html {
   width: full;
   height: 100vh;
 }
-
 
 /* Slider */
 

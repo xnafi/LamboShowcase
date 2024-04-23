@@ -9,6 +9,7 @@ import {
 import image from "../../assets/car.png";
 import Image from "next/image";
 import { lamborghiniCars } from "@/app/cars";
+import Link from "next/link";
 
 export interface allCarData {
   id: number;
@@ -76,7 +77,7 @@ const TiltCard = () => {
         transformStyle: "preserve-3d",
         transform,
       }}
-      className="relative h-[60vh] md:h-[100vh] w-[85vw] md:max-w-[1400px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300"
+      className="relative h-[60vh] md:h-[100vh] w-[90vw] md:max-w-[1400px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300"
     >
       {lamborghiniCars.slice(0, 1).map((car: allCarData) => (
         <motion.div
@@ -85,7 +86,7 @@ const TiltCard = () => {
             transform: "translateZ(75px)",
             transformStyle: "preserve-3d",
           }}
-          className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg"
+          className="absolute inset-4 rounded-xl bg-white shadow-lg"
         >
           <Image
             src={car.image}
@@ -99,14 +100,45 @@ const TiltCard = () => {
             sizes="90vw"
             alt=""
           />
-          <p
-            style={{
-              transform: "translateZ(50px)",
-            }}
-            className="text-center text-2xl font-bold text-black "
-          >
-            HOVER ME
-          </p>
+          <div className="flex justify-between px-2 md:px-[10%] mt-[15%] lg:mt-[5%]">
+            <p
+              style={{
+                transform: "translateZ(50px)",
+              }}
+              className="text-center sub-heading font-bold text-black"
+            >
+              model : {car.model}
+            </p>
+            <p
+              style={{
+                transform: "translateZ(50px)",
+              }}
+              className="text-center sub-heading font-bold text-black"
+            >
+              top speed : {car.topSpeed}
+            </p>
+          </div>
+
+          {/* details */}
+          <div className="flex px-2 md:px-[10%]  absolute w-full bottom-[10%]">
+            <p
+              style={{
+                transform: "translateZ(50px)",
+              }}
+              className="text-center primary-text font-bold text-black hidden md:block"
+            >
+              {car.details.slice(0, 400)}... <Link href="/">More</Link>
+            </p>
+            <p
+              style={{
+                transform: "translateZ(50px)",
+              }}
+              className="text-center primary-text font-bold text-black block md:hidden"
+            >
+              {car.details.slice(0, 250)}...
+              <Link href={`/details/${car.id}`}>More</Link>
+            </p>
+          </div>
         </motion.div>
       ))}
     </motion.div>
