@@ -1,17 +1,18 @@
-"use client";
-import { useState } from "react";
+import Link from "next/link";
 
-function CarListButton({ setCarlist }: any) {
-  const [carList, setCarList] = useState("");
-  const handleCarList = () => {};
+function CarListButton({ href }: any) {
+  const handleCarList = () => {
+    // Your logic here
+  };
+
   return (
-    <button
-      type="button"
+    <Link
+      href={href}
       onClick={handleCarList}
       className="font-quantico buttonPrimary"
     >
       CHOOSE YOUR BEAST
-    </button>
+    </Link>
   );
 }
 
