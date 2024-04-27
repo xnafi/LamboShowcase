@@ -90,7 +90,7 @@ const TiltCard = () => {
         >
           <Image
             src={car.image}
-            className="bgWrap"
+            className="bgWrap pb-20 md:pb-0"
             style={{
               transform: "translateZ(75px)",
               objectFit: "contain",
@@ -113,7 +113,7 @@ const TiltCard = () => {
               style={{
                 transform: "translateZ(50px)",
               }}
-              className="text-center sub-heading font-bold text-black"
+              className="text-center sub-heading font-bold"
             >
               top speed : {car.topSpeed}
             </p>
@@ -134,12 +134,12 @@ const TiltCard = () => {
               style={{
                 transform: "translateZ(50px)",
               }}
-              className="text-center primary-text font-bold text-black block md:hidden"
+              className="text-center primary-text font-bold block md:hidden text-yellow-300"
             >
               {car.details.slice(0, 200)}...
             </p>
             <Link
-              className="cursor-pointer text-yellow-600 !z-[1000] self-center md:self-end sub-heading"
+              className="cursor-pointer text-yellow-300 !z-[1000] self-end sub-heading"
               href={`/car/${car.id}`}
             >
               More

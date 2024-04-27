@@ -7,10 +7,10 @@
     @apply text-4xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold uppercase;
   }
   .sub-heading {
-    @apply text-base md:text-2xl lg:text-3xl font-semibold uppercase;
+    @apply text-base md:text-2xl lg:text-3xl font-semibold uppercase text-yellow-950;
   }
   .primary-text {
-    @apply text-sm md:text-base font-bold;
+    @apply text-sm md:text-base font-bold text-yellow-950;
   }
   .buttonPrimary {
     @apply text-sm md:text-lg border;
