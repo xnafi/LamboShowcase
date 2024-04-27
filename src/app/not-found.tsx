@@ -4,12 +4,10 @@ import React from "react";
 export default function notFound() {
   return (
     <div className="bg-black text-white">
-      <div className="flex h-screen">
-        <div className="m-auto text-center">
+      <div className="flex h-screen w-full">
+        <div className="m-auto text-center w-full">
           <div>
             <svg
-              width="631"
-              height="379"
               viewBox="0 0 631 379"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

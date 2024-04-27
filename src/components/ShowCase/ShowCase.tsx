@@ -8,19 +8,8 @@ import {
 } from "framer-motion";
 import image from "../../assets/car.png";
 import Image from "next/image";
-import { lamborghiniCars } from "@/app/cars";
+import { lamborghiniCars, allCarData } from "@/app/cars";
 import Link from "next/link";
-
-export interface allCarData {
-  id: number;
-  model: string;
-  yearOfMake: number;
-  fuelType: string;
-  topSpeed: string;
-  price: string;
-  details: string;
-  image: string;
-}
 
 const ShowCase = () => {
   return (
@@ -90,7 +79,7 @@ const TiltCard = () => {
         >
           <Image
             src={car.image}
-            className="bgWrap pb-20 md:pb-0"
+            className="bgWrap pb-20 md:pb-10 !-z-10"
             style={{
               transform: "translateZ(75px)",
               objectFit: "contain",
@@ -139,7 +128,7 @@ const TiltCard = () => {
               {car.details.slice(0, 200)}...
             </p>
             <Link
-              className="cursor-pointer text-yellow-300 !z-[1000] self-end sub-heading"
+              className="cursor-pointer text-yellow-300  self-end sub-heading !z-[9999]"
               href={`/car/${car.id}`}
             >
               More
