@@ -120,24 +120,30 @@ const TiltCard = () => {
           </div>
 
           {/* details */}
-          <div className="flex px-2 md:px-[10%]  absolute w-full bottom-[10%]">
+          <div className="flex px-2 md:px-[10%] flex-col absolute w-full bottom-[10%]">
             <p
               style={{
                 transform: "translateZ(50px)",
               }}
               className="text-center primary-text font-bold text-black hidden md:block"
             >
-              {car.details.slice(0, 400)}... <Link href="/">More</Link>
+              {car.details.slice(0, 400)}...
             </p>
+
             <p
               style={{
                 transform: "translateZ(50px)",
               }}
               className="text-center primary-text font-bold text-black block md:hidden"
             >
-              {car.details.slice(0, 250)}...
-              <Link href={`/details/${car.id}`}>More</Link>
+              {car.details.slice(0, 200)}...
             </p>
+            <Link
+              className="cursor-pointer text-yellow-600 !z-[1000] self-center md:self-end sub-heading"
+              href={`/car/${car.id}`}
+            >
+              More
+            </Link>
           </div>
         </motion.div>
       ))}
