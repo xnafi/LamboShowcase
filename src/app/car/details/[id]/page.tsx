@@ -1,6 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
-import { allCarData, lamborghiniCars } from "../../cars";
+import { allCarData, lamborghiniCars } from "../../../cars";
 import Image from "next/image";
 
 const CarDetailsPage = () => {
