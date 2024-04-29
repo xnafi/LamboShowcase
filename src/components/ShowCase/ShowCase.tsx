@@ -77,18 +77,25 @@ const TiltCard = () => {
           }}
           className="absolute inset-4 rounded-xl bg-white shadow-lg"
         >
-          <Image
-            src={car.image}
-            className="bgWrap pb-20 md:pb-10 !-z-10"
-            style={{
-              transform: "translateZ(75px)",
-              objectFit: "contain",
-            }}
-            quality={100}
-            fill
-            sizes="90vw"
-            alt=""
-          />
+          <Link
+            title="click for details"
+            className="cursor-pointer text-yellow-300  self-end sub-heading !z-[9999]"
+            href={`/car/details/${car.id}`}
+          >
+            <Image
+              src={car.image}
+              className="bgWrap pb-20 md:pb-10 !-z-10"
+              style={{
+                transform: "translateZ(75px)",
+                objectFit: "contain",
+              }}
+              quality={100}
+              fill
+              sizes="90vw"
+              alt=""
+            />
+          </Link>
+
           <div className="flex justify-between px-2 md:px-[10%] mt-[15%] lg:mt-[5%]">
             <p
               style={{
@@ -127,12 +134,6 @@ const TiltCard = () => {
             >
               {car.details.slice(0, 200)}...
             </p>
-            <Link
-              className="cursor-pointer text-yellow-300  self-end sub-heading !z-[9999]"
-              href={`/car/${car.id}`}
-            >
-              More
-            </Link>
           </div>
         </motion.div>
       ))}
