@@ -12,6 +12,7 @@ import Image from "next/image";
 import lambo1 from "../../assets/banner/alex_rainer-1_lxISUE3F4-unsplash.jpg";
 import lambo2 from "../../assets/banner/nathan-van-egmond-uwrTwMaxVR4-unsplash.jpg";
 import lambo3 from "../../assets/banner/pexels-adrian-newell-6968984.jpg";
+import "./banner.css";
 
 const Banner = () => {
   return (
