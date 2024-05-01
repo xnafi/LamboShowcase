@@ -13,8 +13,23 @@ import lambo1 from "../../assets/banner/alex_rainer-1_lxISUE3F4-unsplash.jpg";
 import lambo2 from "../../assets/banner/nathan-van-egmond-uwrTwMaxVR4-unsplash.jpg";
 import lambo3 from "../../assets/banner/pexels-adrian-newell-6968984.jpg";
 import "./banner.css";
+import { useRef } from "react";
 
 const Banner = () => {
+  const progressCircle = useRef<any>(null);
+  const progressContent = useRef<any>(null);
+
+  const onAutoplayTimeLeft = (s: any, time: number, progress: number) => {
+    if (progressCircle.current) {
+      progressCircle.current.style.setProperty(
+        "--progress",
+        String(1 - progress)
+      );
+    }
+    if (progressContent.current) {
+      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+    }
+  };
   return (
     <div className="relative bottom-0 lg:bottom-24 h-full">
       {/* slide 1 */}
@@ -35,6 +50,7 @@ const Banner = () => {
           },
         }}
         modules={[EffectCreative, Autoplay, Navigation]}
+        onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
       >
         <SwiperSlide>
@@ -147,6 +163,12 @@ const Banner = () => {
             </div>
           </div>
         </SwiperSlide>
+        <div className="autoplay-progress" slot="container-end">
+          <svg viewBox="0 0 48 48" ref={progressCircle}>
+            <circle cx="24" cy="24" r="20"></circle>
+          </svg>
+          <span ref={progressContent}></span>
+        </div>
       </Swiper>
     </div>
   );
