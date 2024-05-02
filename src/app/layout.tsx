@@ -4,8 +4,7 @@ import type { Metadata } from "next";
 import Footer from "@/components/shared/footer";
 import { Cinzel } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Navbar from "@/components/shared/Navbar";
-
+import Navbar from "@/components/shared/navbar";
 
 export const metadata: Metadata = {
   title: "LAMBO SHOWCASE",

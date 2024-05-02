@@ -67,7 +67,7 @@ const Banner = () => {
               }}
             />
           </div>
-          <div className="flex flex-col h-screen bg-black/50">
+          <div className="flex flex-col h-screen w-full bg-black/50">
             <motion.div
               initial={{ y: -400 }}
               animate={{ y: 0 }}
@@ -105,7 +105,7 @@ const Banner = () => {
               }}
             />
           </div>
-          <div className="flex flex-col h-screen bg-black/50">
+          <div className="flex flex-col h-screen w-full bg-black/50">
             <div className="flex flex-col justify-start items-center mt-[20%] md:mt-[10%]">
               <h1 className="text-xl md:text-3xl xl:text-4xl text-yellow-600 px-2 italic text-center">
                 I don't believe in making a car for the future.
@@ -136,9 +136,9 @@ const Banner = () => {
               }}
             />
           </div>
-          <div className="flex flex-col h-screen bg-black/50">
+          <div className="flex flex-col h-screen w-full bg-black/50">
             <div className="flex flex-col justify-start items-center mt-[20%] md:mt-[10%] text-center px-2">
-              <h1 className="text-xl md:text-3xl xl:text-4xl text-yellow-600 px-2 italic text-center">
+              <h1 className="text-xl md:text-3xl xl:text-4xl text-yellow-600 px-2 italic text-center ">
                 If you are asking why we are not racing in Formula 1 ?
                 <br className="" /> it is because we don't want to
               </h1>
@@ -148,18 +148,6 @@ const Banner = () => {
                   Stephan Winkelmann (CEO at the time)
                 </h3>
               </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col justify-start items-center mt-[10%] text-center px-2">
-            <h1 className="text-2xl md:text-3xl xl:text-4xl text-white italic">
-              If you are asking why we are not racing in Formula 1
-              <br className="hidden md:block" /> it is because we don't want to
-            </h1>
-            <div className="grid">
-              <h3 className="text-lg md:text-2xl xl:text-3xl text-white italic">
-                Stephan Winkelmann (Lamborghini's CEO at the time)
-              </h3>
             </div>
           </div>
         </SwiperSlide>
