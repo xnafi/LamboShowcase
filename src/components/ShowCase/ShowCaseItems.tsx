@@ -30,12 +30,12 @@ export default function ShowCaseItems() {
           <div className="absolute w-[98%] h-[96%] self-center mx-auto inset-0 rounded-xl bg-white shadow-lg">
             <Link
               title="click for details"
-              className="cursor-pointer text-yellow-300  self-end sub-heading"
+              className="cursor-pointer text-yellow-300 self-end sub-heading"
               href={`/car/details/${car.id}`}
             >
               <Image
                 src={car.image}
-                className={`pb-16 md:pb-8 !z-10 !h-[70%] self-center mx-auto`}
+                className={`pb-16 md:pb-8 !z-10 !h-[60%] md:!h-[70%] self-center mx-auto`}
                 quality={100}
                 fill
                 sizes="100vw"

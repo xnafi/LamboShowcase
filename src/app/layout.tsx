@@ -1,9 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import Navbar from "@/components/shared/navbar";
+
 import Footer from "@/components/shared/footer";
 import { Cinzel } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Navbar from "@/components/shared/Navbar";
 
 export const metadata: Metadata = {
   title: "LAMBO SHOWCASE",

@@ -3,8 +3,9 @@ import Image from "next/image";
 import React, { useState } from "react";
 import logo from "../../assets/logoWhite.png";
 import Link from "next/link";
+import { AnimatePresence } from "framer-motion";
 
-export default function Navbar() {
+export default function Navbar({ Component, pageProps, router }: any) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -139,7 +140,7 @@ export default function Navbar() {
                     </li>
                     {/* Login And SignUp Button */}
                     <div className="gap-5 flex">
-                      <Link href='/login'>
+                      <Link href="/login">
                         <button className="btn-one">Login</button>
                       </Link>
 
