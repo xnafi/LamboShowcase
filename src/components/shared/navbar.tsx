@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import logo from "../../assets/logoWhite.png";
 import Link from "next/link";
-import { AnimatePresence } from "framer-motion";
+
 
 export default function Navbar({ Component, pageProps, router }: any) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

@@ -85,7 +85,7 @@ const Banner = () => {
               transition={{ duration: 1.2 }}
               className="flex justify-center items-center text-center mt-4 md:mt-8"
             >
-              <CarListButton href="/car/details/" />
+              <CarListButton href="/car" />
             </motion.div>
           </div>
         </SwiperSlide>
