@@ -3,7 +3,16 @@ import Image from "next/image";
 import React, { useState } from "react";
 import logo from "../../assets/logoWhite.png";
 import Link from "next/link";
+import TransitionLink from "../TranitionLink";
 
+type INav = { name: string };
+
+// Define the navigation items array
+const navItems: INav[] = [
+  { name: "home" },
+  { name: "about" },
+  { name: "contact us" },
+];
 
 export default function Navbar({ Component, pageProps, router }: any) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,12 +29,13 @@ export default function Navbar({ Component, pageProps, router }: any) {
         </Link>
         <ul className="items-center hidden xl:space-x-5 uppercase font-bold text-sm lg:flex px-1 text-white menu menu-horizontal h-full lg:text-sm xl:text-base space-x-4">
           <li className="hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in">
-            <Link
+            <TransitionLink href="/" label="home"></TransitionLink>
+            {/* <Link
               href="/"
               className="hover:text-yellow-500 active:bg-transparent"
             >
               Home
-            </Link>
+            </Link> */}
           </li>
 
           <li className="hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in">

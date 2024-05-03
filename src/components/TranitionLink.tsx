@@ -23,7 +23,7 @@ const TransitionLink = ({ href, label }: Props) => {
       className="hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in"
       onClick={handleClick}
     >
-      <Link href={href} className="hover:text-yellow-500 !p-0">
+      <Link href={href} className="hover:text-yellow-500 !p-0 uppercase">
         {label}
       </Link>
     </button>
