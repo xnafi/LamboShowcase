@@ -28,20 +28,14 @@ export default function ShowCaseItems() {
           className={`${styles.swiper} mySwiper`}
         >
           <div className="absolute w-[98%] h-[96%] self-center mx-auto inset-0 rounded-xl bg-white shadow-lg">
-            <Link
-              title="click for details"
-              className="cursor-pointer text-yellow-300 self-end sub-heading"
-              href={`/car/details/${car.id}`}
-            >
-              <Image
-                src={car.image}
-                className={`pb-16 md:pb-8 !h-[60%] md:!h-[70%] self-center mx-auto`}
-                quality={100}
-                fill
-                sizes="90vw"
-                alt=""
-              />
-            </Link>
+            <Image
+              src={car.image}
+              className={`pb-16 md:pb-8 !h-[60%] md:!h-[70%] self-center mx-auto`}
+              quality={100}
+              fill
+              sizes="90vw"
+              alt=""
+            />
 
             <div className="flex justify-between px-2 md:px-[10%] mt-[15%] lg:mt-[5%]">
               <p
@@ -81,6 +75,12 @@ export default function ShowCaseItems() {
               >
                 {car.details.slice(0, 200)}...
               </p>
+              <Link
+                className="cursor-pointer text-yellow-900 z-[1] sub-heading self-center"
+                href={`/car/details/${car.id}`}
+              >
+                more
+              </Link>
             </div>
           </div>
         </Swiper>

@@ -11,7 +11,7 @@ export const animatePageIn = () => {
     tl.set([bannerOne, bannerTwo, bannerThree, bannerFour], {
       yPercent: 0,
     }).to([bannerOne, bannerTwo, bannerThree, bannerFour], {
-      yPercent: 100,
+      yPercent: 200,
       stagger: 0.2,
     });
   }
@@ -29,10 +29,10 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
     tl.set([bannerOne, bannerTwo, bannerThree, bannerFour], {
       yPercent: 100,
     }).to([bannerOne, bannerTwo, bannerThree, bannerFour], {
-      yPercent: 0,
+      yPercent: 200,
       stagger: 0.2,
       onComplete: () => {
-        router.push(href);
+       return router.push(href);
       },
     });
   }
