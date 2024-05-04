@@ -35,7 +35,7 @@ export default function ShowCaseItems() {
             >
               <Image
                 src={car.image}
-                className={`pb-16 md:pb-8 !z-10 !h-[60%] md:!h-[70%] self-center mx-auto`}
+                className={`pb-16 md:pb-8 !h-[60%] md:!h-[70%] self-center mx-auto`}
                 quality={100}
                 fill
                 sizes="90vw"
