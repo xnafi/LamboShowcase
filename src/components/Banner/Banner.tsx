@@ -99,7 +99,7 @@ const Banner = () => {
               placeholder="blur"
               quality={100}
               fill
-              sizes="100vw"
+              sizes="90vw"
               style={{
                 objectFit: "cover",
               }}
@@ -130,7 +130,7 @@ const Banner = () => {
               placeholder="blur"
               quality={100}
               fill
-              sizes="100vw"
+              sizes="90vw"
               style={{
                 objectFit: "cover",
               }}

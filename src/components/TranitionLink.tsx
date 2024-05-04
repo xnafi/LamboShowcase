@@ -1,5 +1,5 @@
 "use client";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { animatePageOut } from "@/app/utils/animation";
 
@@ -14,7 +14,7 @@ const TransitionLink = ({ href, label }: Props) => {
 
   const handleClick = () => {
     if (pathname !== href) {
-      animatePageOut(href, router);
+      return animatePageOut(href, router);
     }
   };
 

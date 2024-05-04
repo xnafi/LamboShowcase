@@ -38,7 +38,7 @@ export default function ShowCaseItems() {
                 className={`pb-16 md:pb-8 !z-10 !h-[60%] md:!h-[70%] self-center mx-auto`}
                 quality={100}
                 fill
-                sizes="100vw"
+                sizes="90vw"
                 alt=""
               />
             </Link>

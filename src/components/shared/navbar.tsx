@@ -30,21 +30,10 @@ export default function Navbar({ Component, pageProps, router }: any) {
         <ul className="items-center hidden xl:space-x-5 uppercase font-bold text-sm lg:flex px-1 text-white menu menu-horizontal h-full lg:text-sm xl:text-base space-x-4">
           <li className="hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in">
             <TransitionLink href="/" label="home"></TransitionLink>
-            {/* <Link
-              href="/"
-              className="hover:text-yellow-500 active:bg-transparent"
-            >
-              Home
-            </Link> */}
           </li>
 
           <li className="hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in">
-            <Link
-              href="/about-us"
-              className="hover:text-yellow-500 active:bg-transparent"
-            >
-              About us
-            </Link>
+            <TransitionLink href="/about" label="about"></TransitionLink>
           </li>
 
           <li className="hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in">
