@@ -76,7 +76,7 @@ export default function ShowCaseItems() {
                 {car.details.slice(0, 200)}...
               </p>
               <Link
-                className="cursor-pointer text-yellow-900 z-[1] sub-heading self-center"
+                className="cursor-pointer text-yellow-900 z-[1] self-center font-bold"
                 href={`/car/details/${car.id}`}
               >
                 more
