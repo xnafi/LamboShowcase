@@ -18,7 +18,12 @@ export default function ShowCaseItems() {
         }}
         modules={[Mousewheel, Pagination]}
         className="mySwiper"
-        style={{ width: "100%", height: "100", margin: "0px" }}
+        style={{
+          width: "100%",
+          height: "100%",
+          margin: "0px",
+          position: "relative",
+        }}
       >
         {lamborghiniCars.map((car: allCarData) => (
           <SwiperSlide
@@ -36,33 +41,18 @@ export default function ShowCaseItems() {
             />
 
             <div className="flex justify-between px-2 md:px-[10%] mt-[15%] lg:mt-[5%]">
-              <p
-                style={{
-                  transform: "translateZ(50px)",
-                }}
-                className="text-center sub-heading font-bold text-black"
-              >
+              <p className="text-center sub-heading font-bold text-black">
                 model : {car.model}
               </p>
-              <p
-                style={{
-                  transform: "translateZ(50px)",
-                }}
-                className="text-center sub-heading font-bold"
-              >
+              <p className="text-center sub-heading font-bold">
                 top speed : {car.topSpeed}
               </p>
             </div>
 
             {/* details */}
             <div className="flex px-2 md:px-[10%] flex-col absolute w-full bottom-[10%]">
-              <p
-                style={{
-                  transform: "translateZ(50px)",
-                }}
-                className="text-center primary-text font-bold text-black hidden md:block"
-              >
-                {car.details.slice(0, 400)}...{" "}
+              <p className="text-center primary-text font-bold text-black hidden md:block">
+                {car.details.slice(0, 400)}...
                 <Link
                   className="cursor-pointer text-yellow-900 z-[1] self-center font-bold"
                   href={`/car/details/${car.id}`}
@@ -71,13 +61,8 @@ export default function ShowCaseItems() {
                 </Link>
               </p>
 
-              <p
-                style={{
-                  transform: "translateZ(50px)",
-                }}
-                className="text-center primary-text font-bold block md:hidden text-yellow-300"
-              >
-                {car.details.slice(0, 200)}...{" "}
+              <p className="text-center primary-text font-bold block md:hidden text-yellow-300">
+                {car.details.slice(0, 200)}...
                 <Link
                   className="cursor-pointer text-yellow-900 z-[1] self-center font-bold"
                   href={`/car/details/${car.id}`}
