@@ -10,8 +10,8 @@ import image from "../../assets/car.png";
 import Image from "next/image";
 import { lamborghiniCars, allCarData } from "@/app/cars";
 import Link from "next/link";
-import { Swiper } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Keyboard, Pagination, Navigation } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -19,20 +19,31 @@ import styles from "./showcase.module.css";
 
 export default function ShowCaseItems() {
   return (
-    <div className="relative h-[60vh] md:h-[100vh] w-[90vw] md:max-w-[1400px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300">
-      {lamborghiniCars.slice(0, 1).map((car: allCarData) => (
-        <Swiper
-          key={car.id}
-          pagination={true}
-          modules={[Pagination]}
-          className={`${styles.swiper} mySwiper`}
-        >
-          <div className="absolute w-[98%] h-[96%] self-center mx-auto inset-0 rounded-xl bg-white shadow-lg">
+    <div className="h-[70vh] md:h-[100vh] w-[90vw] md:max-w-[1400px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300">
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={30}
+        keyboard={{
+          enabled: true,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Navigation]}
+        className={`${styles.Swiper}`}
+      >
+        {lamborghiniCars.map((car: allCarData) => (
+          <SwiperSlide
+            key={car.id}
+            className={` ${styles.swiperSlide}self-center rounded-xl m-0 bg-white shadow-lg`}
+          >
             <Image
               src={car.image}
               className={`pb-16 md:pb-8 !h-[60%] md:!h-[70%] self-center mx-auto`}
               quality={100}
               fill
+              objectFit="contain"
               sizes="90vw"
               alt=""
             />
@@ -64,7 +75,13 @@ export default function ShowCaseItems() {
                 }}
                 className="text-center primary-text font-bold text-black hidden md:block"
               >
-                {car.details.slice(0, 400)}...
+                {car.details.slice(0, 400)}...{" "}
+                <Link
+                  className="cursor-pointer text-yellow-900 z-[1] self-center font-bold"
+                  href={`/car/details/${car.id}`}
+                >
+                  more
+                </Link>
               </p>
 
               <p
@@ -73,18 +90,18 @@ export default function ShowCaseItems() {
                 }}
                 className="text-center primary-text font-bold block md:hidden text-yellow-300"
               >
-                {car.details.slice(0, 200)}...
+                {car.details.slice(0, 200)}...{" "}
+                <Link
+                  className="cursor-pointer text-yellow-900 z-[1] self-center font-bold"
+                  href={`/car/details/${car.id}`}
+                >
+                  more
+                </Link>
               </p>
-              <Link
-                className="cursor-pointer text-yellow-900 z-[1] self-center font-bold"
-                href={`/car/details/${car.id}`}
-              >
-                more
-              </Link>
             </div>
-          </div>
-        </Swiper>
-      ))}
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 }
