@@ -1,7 +1,8 @@
-.Swiper {
+/* .Swiper {
   width: 100% !important;
   height: 100% !important;
   position: static !important;
+   margin: auto !important;
 }
 
 .swiperSlide {
@@ -21,11 +22,6 @@
   object-fit: contain !important;
 }
 
-.Swiper {
-  width: 100% !important;
-  height: 100% !important;
-  margin: auto !important;
-}
 
 .bgWrap {
   height: 10vh !important;
@@ -40,4 +36,4 @@
   text-align: center;
   width: full;
   height: 100vh;
-}
+} */

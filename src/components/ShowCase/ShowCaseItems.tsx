@@ -1,42 +1,29 @@
 "use client";
-import React, { useRef } from "react";
-import {
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-  useSpring,
-} from "framer-motion";
-import image from "../../assets/car.png";
 import Image from "next/image";
 import { lamborghiniCars, allCarData } from "@/app/cars";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Keyboard, Pagination, Navigation } from "swiper/modules";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import styles from "./showcase.module.css";
+import { Mousewheel, Pagination } from "swiper/modules";
 
 export default function ShowCaseItems() {
   return (
-    <div className="h-[70vh] md:h-[100vh] w-[90vw] md:max-w-[1400px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300">
+    <div className="h-[60vh] md:h-[100vh] w-[90vw] md:max-w-[1400px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300">
       <Swiper
+        direction={"horizontal"}
         slidesPerView={1}
         spaceBetween={30}
-        keyboard={{
-          enabled: true,
-        }}
+        mousewheel={true}
         pagination={{
           clickable: true,
         }}
-        navigation={true}
-        modules={[Navigation]}
-        className={`${styles.Swiper}`}
+        modules={[Mousewheel, Pagination]}
+        className="mySwiper"
+        style={{ width: "100%", height: "100", margin: "0px" }}
       >
         {lamborghiniCars.map((car: allCarData) => (
           <SwiperSlide
             key={car.id}
-            className={` ${styles.swiperSlide}self-center rounded-xl m-0 bg-white shadow-lg`}
+            className={` self-center rounded-xl m-0 bg-white shadow-lg`}
           >
             <Image
               src={car.image}
