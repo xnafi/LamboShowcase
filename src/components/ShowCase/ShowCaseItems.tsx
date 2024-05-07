@@ -28,8 +28,16 @@ export default function ShowCaseItems() {
         {lamborghiniCars.map((car: allCarData) => (
           <SwiperSlide
             key={car.id}
-            className={` self-center rounded-xl m-0 bg-white shadow-lg`}
+            className={` rounded-xl m-0 bg-white shadow-lg h-[]`}
           >
+            <div className="flex justify-between px-2 md:px-[10%] mt-[15%] lg:mt-[5%] self-start w-full">
+              <p className="text-center sub-heading font-bold text-black">
+                model : {car.model}
+              </p>
+              <p className="text-center sub-heading font-bold">
+                top speed : {car.topSpeed}
+              </p>
+            </div>
             <Image
               src={car.image}
               className={`pb-16 md:pb-8 !h-[60%] md:!h-[70%] self-center mx-auto`}
@@ -39,15 +47,6 @@ export default function ShowCaseItems() {
               sizes="90vw"
               alt=""
             />
-
-            <div className="flex justify-between px-2 md:px-[10%] mt-[15%] lg:mt-[5%]">
-              <p className="text-center sub-heading font-bold text-black">
-                model : {car.model}
-              </p>
-              <p className="text-center sub-heading font-bold">
-                top speed : {car.topSpeed}
-              </p>
-            </div>
 
             {/* details */}
             <div className="flex px-2 md:px-[10%] flex-col absolute w-full bottom-[10%]">
