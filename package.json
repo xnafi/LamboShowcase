@@ -16,6 +16,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.51.3",
+    "svelte-speedometer": "^1.1.0",
     "swiper": "^11.1.1"
   },
   "devDependencies": {
