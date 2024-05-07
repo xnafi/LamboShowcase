@@ -30,46 +30,52 @@ export default function ShowCaseItems() {
             key={car.id}
             className={` rounded-xl mx-auto bg-white shadow-lg !h-full md:!h-[80vh]`}
           >
-            <div className="flex justify-between px-2 md:px-[10%] mt-[15%] lg:mt-[5%] self-start w-full">
-              <p className="text-center sub-heading font-bold text-black">
-                model : {car.model.slice(0, 10)}...
-              </p>
-              <p className="text-center sub-heading font-bold">
-                top speed : {car.topSpeed}
-              </p>
-            </div>
-            <Image
-              src={car.image}
-              className={`pb-[10%] md:pb-[20%] !h-[80%] md:!h-[70%] self-center mx-auto`}
-              quality={100}
-              fill
-              objectFit="contain"
-              sizes="90vw"
-              alt=""
-            />
+            <Link
+              className="cursor-pointer text-yellow-900 z-[2] flex flex-col w-full h-full"
+              href={`/car/details/${car.id}`}
+              title="click for details"
+            >
+              <div className="flex justify-between px-2 md:px-[10%] mt-[15%] md:mt-[10%] lg:mt-[5%] self-start w-full">
+                <p className="text-center sub-heading font-bold text-black">
+                  model : {car.model.slice(0, 10)}...
+                </p>
+                <p className="text-center sub-heading font-bold">
+                  top speed : {car.topSpeed}
+                </p>
+              </div>
+              <Image
+                src={car.image}
+                className={`pb-[10%] md:pb-[10%] xl:pb-[5%] !h-[80%] md:!h-[70%] self-center mx-auto`}
+                quality={100}
+                fill
+                objectFit="contain"
+                sizes="90vw"
+                alt=""
+              />
 
-            {/* details */}
-            <div className="flex px-2 md:px-[10%] flex-col absolute w-full bottom-[8%] md:bottom-[10%]">
-              <p className="text-center primary-text font-bold text-black hidden md:block">
-                {car.details.slice(0, 400)}
-                <Link
-                  className="cursor-pointer text-yellow-900 z-[1] self-center font-bold"
-                  href={`/car/details/${car.id}`}
-                >
-                  more
-                </Link>
-              </p>
+              {/* details */}
+              <div className="flex px-2 md:px-[10%] flex-col absolute w-full bottom-[8%] md:bottom-[10%]">
+                <p className="text-center primary-text font-bold text-black hidden md:block">
+                  {car.details.slice(0, 400)}
+                  <Link
+                    className="cursor-pointer text-yellow-900 z-[2] self-center font-bold"
+                    href={`/car/details/${car.id}`}
+                  >
+                    more
+                  </Link>
+                </p>
 
-              <p className="text-center primary-text font-bold block md:hidden text-yellow-300">
-                {car.details.slice(0, 200)}...
-                <Link
-                  className="cursor-pointer text-yellow-900 z-[1] self-center font-bold"
-                  href={`/car/details/${car.id}`}
-                >
-                  more
-                </Link>
-              </p>
-            </div>
+                <p className="text-center primary-text font-bold block md:hidden text-yellow-300">
+                  {car.details.slice(0, 200)}...
+                  <Link
+                    className="cursor-pointer text-yellow-900 z-[1] self-center font-bold"
+                    href={`/car/details/${car.id}`}
+                  >
+                    more
+                  </Link>
+                </p>
+              </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
