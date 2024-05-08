@@ -30,7 +30,7 @@ export default function ShowCaseItems() {
             key={car.id}
             className={` rounded-xl mx-auto bg-white shadow-lg !h-full md:!h-[80vh]`}
           >
-            <div className="flex justify-between px-2 md:px-[10%] mt-[15%] md:mt-[10%] lg:mt-[5%] self-start w-full">
+            <div className="flex justify-between px-2 md:px-[10%] mt-[15%] md:mt-[10%] lg:mt-[5%] self-start w-[100%] absolute">
               <p className="text-center sub-heading font-bold text-black">
                 model : {car.model.slice(0, 10)}...
               </p>
