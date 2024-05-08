@@ -24,7 +24,7 @@ const ParticlesComponent = (props: any) => {
     console.log(container);
   };
 
-  const options = useMemo(
+  const options: any = useMemo(
     () => ({
       background: {
         color: {
