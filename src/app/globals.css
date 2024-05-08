@@ -4,7 +4,7 @@
 
 @layer utilities {
   .headings {
-    @apply text-3xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold uppercase;
+    @apply text-3xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-7xl font-bold uppercase;
   }
   .sub-heading {
     @apply text-base md:text-2xl lg:text-3xl font-semibold uppercase text-yellow-950;
@@ -108,4 +108,9 @@ html {
   width: full;
   height: 100vh;
 }
-
+#particles canvas {
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}

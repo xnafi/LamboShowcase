@@ -44,7 +44,7 @@ const LoginPage = () => {
         }}
         animate={{ x: 0, opacity: 1, rotate: 0, overflow: "hidden" }}
         transition={{ duration: 2, ease: "backInOut" }}
-        className="absolute no-scrollbar overflow-x-hidden bgWrap"
+        className="absolute no-scrollbar overflow-x-hidden bgWrap !z-10"
       >
         <div className="bgWrap">
           <Image
@@ -64,11 +64,11 @@ const LoginPage = () => {
         initial={{ y: -1300, opacity: 0.1 }}
         animate={{ y: 0, opacity: 1, rotate: 0 }}
         transition={{ duration: 1.5, ease: "circIn" }}
-        className="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8"
+        className="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8 z-20"
       >
         <div className="text-white">
-          <div className="mb-6 flex flex-col items-center">
-            <Image src={logo} width={250} height={250} alt="" />
+          <div className="mb-6 flex flex-col items-center ">
+            <Image src={logo} width={250} height={250} priority alt="" />
             <span className="text-gray-300 mt-2">Enter Login Details</span>
           </div>
           <form

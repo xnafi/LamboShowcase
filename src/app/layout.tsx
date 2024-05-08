@@ -5,6 +5,7 @@ import Footer from "@/components/shared/footer";
 import { Cinzel } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "@/components/shared/navbar";
+import ParticlesComponent from "@/components/Bg/Bg";
 
 export const metadata: Metadata = {
   title: "LAMBO SHOWCASE",
@@ -32,6 +33,7 @@ export default function RootLayout({
         {children}
         <SpeedInsights />
         <Footer />
+        <ParticlesComponent id="particles" />
       </body>
     </html>
   );
