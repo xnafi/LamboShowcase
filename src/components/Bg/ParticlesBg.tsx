@@ -1,13 +1,19 @@
 "use client";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useMemo, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import {
+  type Container,
+  type ISourceOptions,
+  Engine,
+} from "@tsparticles/engine";
+
 import { loadSlim } from "@tsparticles/slim";
 
-const ParticlesComponent = (props: any) => {
+const ParticlesComponent = () => {
   const [init, setInit] = useState(false);
   // this should be run only once per application lifetime
   useEffect(() => {
-    initParticlesEngine(async (engine: any) => {
+    initParticlesEngine(async (engine: Engine) => {
       // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
       // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
       // starting from v2 you can add only the features you need reducing the bundle size
@@ -20,11 +26,11 @@ const ParticlesComponent = (props: any) => {
     });
   }, []);
 
-  const particlesLoaded = (container: any) => {
+  const particlesLoaded = async (container?: Container): Promise<void> => {
     console.log(container);
   };
 
-  const options: any = useMemo(
+  const options: ISourceOptions = useMemo(
     () => ({
       background: {
         color: {
@@ -36,58 +42,58 @@ const ParticlesComponent = (props: any) => {
         events: {
           onClick: {
             enable: true,
-            mode: "repulse",
+            mode: "push",
           },
           onHover: {
             enable: true,
-            mode: "grab",
+            mode: "repulse",
           },
         },
         modes: {
           push: {
-            distance: 200,
-            duration: 15,
+            quantity: 4,
           },
-          grab: {
-            distance: 150,
+          repulse: {
+            distance: 200,
+            duration: 0.3,
           },
         },
       },
       particles: {
         color: {
-          value: "#FFFFFF",
+          value: "#ffffff",
         },
         links: {
-          color: "#FFFFFF",
-          distance: 150,
+          color: "#ffffff",
+          distance: 120,
           enable: true,
-          opacity: 0.3,
+          opacity: 0.9,
           width: 1,
         },
         move: {
           direction: "none",
           enable: true,
           outModes: {
-            default: "bounce",
+            default: "out",
           },
-          random: true,
-          speed: 1,
+          random: false,
+          speed: 3,
           straight: false,
         },
         number: {
           density: {
             enable: true,
           },
-          value: 150,
+          value: 100,
         },
         opacity: {
-          value: 1.0,
+          value: 0.5,
         },
         shape: {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 3 },
+          value: { min: 1, max: 5 },
         },
       },
       detectRetina: true,
@@ -95,7 +101,13 @@ const ParticlesComponent = (props: any) => {
     []
   );
 
-  return <Particles id={props.id} init={particlesLoaded} options={options} />;
+  return (
+    <Particles
+      id="tsparticles"
+      particlesLoaded={particlesLoaded}
+      options={options}
+    />
+  );
 };
 
 export default ParticlesComponent;
