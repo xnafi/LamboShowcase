@@ -5,7 +5,8 @@ import Footer from "@/components/shared/footer";
 import { Cinzel } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "@/components/shared/navbar";
-import ParticlesComponent from "@/components/Bg/Bg";
+import ParticlesComponent from "@/components/Bg/ParticlesBg";
+
 
 export const metadata: Metadata = {
   title: "LAMBO SHOWCASE",
