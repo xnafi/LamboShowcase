@@ -1,6 +1,7 @@
 "use client";
 import { allCarData, lamborghiniCars } from "@/app/cars";
 import Image from "next/image";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 
 export default function CarDetails() {
@@ -22,12 +23,12 @@ export default function CarDetails() {
             <p className="text-sm md:text-base text-yellow-300 p-2 mb-4">
               Something Went Wrong
             </p>
-            <a
+            <Link
               href={`/car`}
               className="bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent"
             >
               Retry
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -35,18 +36,21 @@ export default function CarDetails() {
   }
   return (
     <div className="h-screen md:max-w-[1400px] flex flex-col justify-center items-center text-white">
-      <div className="w-full h-[60vh] bg-white mt-[10%]">
+      <div className="w-full h-[40vh] md:h-[60vh] xl:h-[70%] bg-white mt-[10%] flex flex-col items-center">
+        <h1 className="!relative top-20  text-teal-800">{car.model}</h1>
         <Image
           src={car.image}
-          className={`pb-[10%] md:pb-[10%] xl:pb-[5%] !h-[80%] md:!h-[70%] self-center mx-auto`}
+          className={`mt-[20%] md:mt-[10%] xl:pb-[10%] self-center`}
           quality={100}
-          fill
+          height={200}
+          width={1000}
+          // fill
           objectFit="contain"
           sizes="90vw"
           alt=""
         />
       </div>
-      <h1>{car.model}</h1>
+      {/* <h1>{car.model}</h1> */}
       <p>Year of Make: {car.yearOfMake}</p>
       <p>Fuel Type: {car.fuelType}</p>
       <p>Top Speed: {car.topSpeed}</p>
