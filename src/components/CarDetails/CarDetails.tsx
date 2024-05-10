@@ -37,6 +37,7 @@ export default function CarDetails() {
   return (
     <div className="h-screen md:max-w-[1400px] flex flex-col justify-center items-center text-white">
       <div className="w-full h-[40vh] md:h-[60vh] xl:h-[70%] bg-white mt-[10%] flex flex-col items-center">
+        {/* car model */}
         <h1 className="!relative top-20  text-teal-800">{car.model}</h1>
         <Image
           src={car.image}
@@ -50,7 +51,6 @@ export default function CarDetails() {
           alt=""
         />
       </div>
-      {/* <h1>{car.model}</h1> */}
       <p>Year of Make: {car.yearOfMake}</p>
       <p>Fuel Type: {car.fuelType}</p>
       <p>Top Speed: {car.topSpeed}</p>
