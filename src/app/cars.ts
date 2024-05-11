@@ -20,7 +20,7 @@ export const lamborghiniCars: allCarData[] = [
     price: "$218,009",
     details:
       "The Lamborghini Urus is a luxury SUV that redefines performance and versatility. Powered by a twin-turbocharged V8 engine producing 641 horsepower, it can accelerate from 0 to 60 mph in just 3.6 seconds. The Urus features advanced driving dynamics, including all-wheel drive and active torque vectoring, making it equally capable on and off the road.",
-    image: "/assets/urus.png",
+    image: "/assets/1.png",
     category: "SUV",
   },
   {
@@ -44,7 +44,7 @@ export const lamborghiniCars: allCarData[] = [
     price: "$311,771",
     details:
       "The Lamborghini Huracan Performante is a track-focused supercar that pushes the boundaries of performance and agility. Its 5.2-liter V10 engine produces 631 horsepower, allowing it to sprint from 0 to 60 mph in just 2.9 seconds. The Performante features advanced aerodynamics, including active aerodynamic elements and the ALA system, making it a formidable force on the track.",
-    image: "/assets/HuracanPerformante.png",
+    image: "/assets/3.png",
     category: "Supercar",
   },
   {

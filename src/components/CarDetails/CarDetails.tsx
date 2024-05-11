@@ -35,27 +35,44 @@ export default function CarDetails() {
     );
   }
   return (
-    <div className="h-screen md:max-w-[1400px] flex flex-col justify-center items-center text-white">
-      <div className="w-full h-[40vh] md:h-[60vh] xl:h-[70%] bg-white mt-[10%] flex flex-col items-center">
-        {/* car model */}
-        <h1 className="!relative top-20  text-teal-800">{car.model}</h1>
+    <div className="h-full md:max-w-[1400px] flex flex-col justify-center text-white  mt-[35%] md:mt-[20%] lg:mt-[15%]">
+      <div className="w-full flex flex-col">
         <Image
           src={car.image}
-          className={`mt-[20%] md:mt-[10%] xl:pb-[10%] self-center`}
+          className={`self-center relative`}
           quality={100}
           height={200}
           width={1000}
-          // fill
           objectFit="contain"
           sizes="90vw"
           alt=""
         />
       </div>
-      <p>Year of Make: {car.yearOfMake}</p>
-      <p>Fuel Type: {car.fuelType}</p>
-      <p>Top Speed: {car.topSpeed}</p>
-      <p>Price: {car.price}</p>
-      <p>Details: {car.details}</p>
+      <div className="flex flex-col w-[90%] mx-auto justify-center items-center space-y-3">
+        <h1 className="h-full font-bold uppercase headings !text-left self-start">
+          {car.model}
+        </h1>
+
+        <p className="h-full font-bold uppercase sub-heading !text-white self-start">
+          vehicle category : {car.category}
+        </p>
+        <p className="h-full font-bold uppercase sub-heading !text-white self-start">
+          Year of Make: {car.yearOfMake}
+        </p>
+        <p className="h-full font-bold uppercase sub-heading !text-white self-start">
+          Fuel Type: {car.fuelType}
+        </p>
+
+        <p className="h-full font-bold uppercase sub-heading !text-white self-start">
+          Top Speed: {car.topSpeed}
+        </p>
+        <p className="h-full font-bold uppercase sub-heading !text-white self-start">
+          Price: {car.price}
+        </p>
+        <p className="h-full font-bold uppercase sub-heading !text-white self-start">
+          Details : <span className="primary-text !text-white"> {car.details}</span>
+        </p>
+      </div>
     </div>
   );
 }
