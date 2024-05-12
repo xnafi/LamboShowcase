@@ -44,11 +44,10 @@ export default function CarDetails() {
           quality={100}
           height={200}
           width={1000}
-           style={{
-                objectFit: "contain",
-              }}
-            />
-         sizes="90vw"
+          style={{
+            objectFit: "contain",
+          }}
+          sizes="90vw"
         />
       </div>
       <div className="flex flex-col w-[90%] mx-auto justify-center items-center space-y-3">
@@ -73,7 +72,8 @@ export default function CarDetails() {
           Price: {car.price}
         </p>
         <p className="h-full font-bold uppercase sub-heading !text-white self-start">
-          Details : <span className="primary-text !text-white"> {car.details}</span>
+          Details :{" "}
+          <span className="primary-text !text-white"> {car.details}</span>
         </p>
       </div>
     </div>
