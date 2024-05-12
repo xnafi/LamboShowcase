@@ -80,9 +80,10 @@ export default function ShowCaseItems() {
               initial={{ y: 0, opacity: 1 }}
               animate={animationControls}
               transition={{
-                duration: 0.4,
+                duration: 0.5,
                 ease: "easeIn",
-                delay: 0.9,
+                delay: 0.5,
+                bounceDamping: 0.5,
               }}
               className="flex justify-between px-2 md:px-[10%] mt-[15%] md:mt-[10%] lg:mt-[5%] self-start w-[100%] absolute"
             >
