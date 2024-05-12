@@ -38,14 +38,17 @@ export default function CarDetails() {
     <div className="h-full md:max-w-[1400px] flex flex-col justify-center text-white  mt-[35%] md:mt-[20%] lg:mt-[15%]">
       <div className="w-full flex flex-col">
         <Image
+          alt="lambo"
           src={car.image}
           className={`self-center relative`}
           quality={100}
           height={200}
           width={1000}
-          objectFit="contain"
-          sizes="90vw"
-          alt=""
+           style={{
+                objectFit: "contain",
+              }}
+            />
+         sizes="90vw"
         />
       </div>
       <div className="flex flex-col w-[90%] mx-auto justify-center items-center space-y-3">
