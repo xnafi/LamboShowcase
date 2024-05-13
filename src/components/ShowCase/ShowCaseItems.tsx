@@ -20,10 +20,6 @@ export default function ShowCaseItems() {
   const animateImage = useAnimation();
   const animatePara = useAnimation();
 
-  useEffect(() => {
-    console.log("hello");
-  }, [carId]);
-
   const handleSlideChange = async () => {
     animationControls.start({ y: 0, opacity: 1, scale: 1 });
     animateImage.start({ y: 0, opacity: 1, scale: 1 });
