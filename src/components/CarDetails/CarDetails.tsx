@@ -37,6 +37,7 @@ export default function CarDetails() {
   return (
     <div className="h-full md:max-w-[1400px] flex flex-col justify-center text-white  mt-[35%] md:mt-[20%] lg:mt-[15%]">
       <div className="w-full flex flex-col">
+        {/* car image */}
         <Image
           alt="lambo"
           src={car.image}
