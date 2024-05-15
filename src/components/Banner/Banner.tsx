@@ -1,11 +1,10 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-creative";
 import "swiper/css/navigation";
 import { EffectCreative, Autoplay, Navigation } from "swiper/modules";
-import { motion } from "framer-motion";
+import { motion, useTransform, useSpring } from "framer-motion";
 import CarListButton from "@/components/buttons/CarListButton";
 import Image from "next/image";
 import lambo1 from "../../assets/banner/alex_rainer-1_lxISUE3F4-unsplash.jpg";
@@ -14,7 +13,9 @@ import lambo3 from "../../assets/banner/pexels-adrian-newell-6968984.jpg";
 import "./banner.css";
 import { useRef } from "react";
 
-const Banner = () => {
+const Banner = ({ scrollYProgress }: any) => {
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.1]);
+  const springScale = useSpring(scale, { stiffness: 500, damping: 50 });
   const progressCircle = useRef<any>(null);
   const progressContent = useRef<any>(null);
 
@@ -29,9 +30,12 @@ const Banner = () => {
       progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
     }
   };
+
   return (
-    <div className="relative bottom-0 lg:bottom-24 h-full">
-      {/* slide 1 */}
+    <motion.div
+      style={{ scale: springScale }}
+      className="sticky top-0 h-screen"
+    >
       <Swiper
         autoplay={{
           delay: 7000,
@@ -66,12 +70,12 @@ const Banner = () => {
               }}
             />
           </div>
-          <div className="flex flex-col h-screen w-full bg-black/50">
+          <div className="flex flex-col h-full w-full bg-black/50">
             <motion.div
               initial={{ y: -400 }}
               animate={{ y: 0 }}
               transition={{ duration: 1 }}
-              className="flex flex-col justify-start items-center mt-[40%] md:mt-[20%] lg:mt-[20%] xl:mt-[15%] font-quantico"
+              className="flex flex-col justify-start items-center mt-[90%] md:mt-[20%] lg:mt-[20%] xl:mt-[15%] font-quantico"
             >
               <h1 className="headings text-yellow-600">INTRODUCING</h1>
               <div className="grid">
@@ -89,7 +93,6 @@ const Banner = () => {
           </div>
         </SwiperSlide>
 
-        {/* slide 2 */}
         <SwiperSlide>
           <div className="bgWrap">
             <Image
@@ -105,7 +108,7 @@ const Banner = () => {
             />
           </div>
           <div className="flex flex-col h-screen w-full bg-black/50">
-            <div className="flex flex-col justify-start items-center mt-[20%] md:mt-[10%]">
+            <div className="flex flex-col justify-start items-center mt-[70%] md:mt-[20%] lg:mt-[20%] xl:mt-[15%]">
               <h1 className="text-xl md:text-3xl xl:text-4xl text-yellow-600 px-2 italic text-center">
                 I don't believe in making a car for the future.
                 <br className="hidden md:block" /> I believe in making a car for
@@ -120,7 +123,6 @@ const Banner = () => {
           </div>
         </SwiperSlide>
 
-        {/* slide 3 */}
         <SwiperSlide>
           <div className="bgWrap">
             <Image
@@ -136,7 +138,7 @@ const Banner = () => {
             />
           </div>
           <div className="flex flex-col h-screen w-full bg-black/50">
-            <div className="flex flex-col justify-start items-center mt-[20%] md:mt-[10%] text-center px-2">
+            <div className="flex flex-col justify-start items-center mt-[70%] md:mt-[20%] lg:mt-[20%] xl:mt-[15%] text-center px-2">
               <h1 className="text-xl md:text-3xl xl:text-4xl text-yellow-600 px-2 italic text-center ">
                 If you are asking why we are not racing in Formula 1 ?
                 <br className="" /> it is because we don't want to
@@ -157,7 +159,7 @@ const Banner = () => {
           <span ref={progressContent}></span>
         </div>
       </Swiper>
-    </div>
+    </motion.div>
   );
 };
 

@@ -51,7 +51,7 @@ export default function CarDetails() {
           sizes="90vw"
         />
       </div>
-      <div className="flex flex-col lg:grid grid-cols-2 w-full space-y-5 items-start lg:items-center place-items-center">
+      <div className="flex flex-col lg:grid grid-cols-2 mx-auto space-y-5 items-start w-full md:w-[90%]">
         <h1 className="h-full font-bold uppercase headings !text-left  text-wrap">
           {car.model}
         </h1>
@@ -74,7 +74,7 @@ export default function CarDetails() {
         </p>
       </div>
       <div>
-        <p className="h-full font-bold uppercase sub-heading !text-white lg:text-center  md:w-[95%] lg:mx-auto">
+        <p className="h-full font-bold uppercase sub-heading !text-white lg:text-left w-full md:w-[90%] lg:mx-auto">
           Details :
           <span className="primary-text !text-white"> {car.details}</span>
         </p>
