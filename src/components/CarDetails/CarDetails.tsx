@@ -51,10 +51,7 @@ export default function CarDetails() {
           sizes="90vw"
         />
       </div>
-      <div
-        // style={{ justifyItems: "center" }}
-        className="flex flex-col lg:grid grid-cols-2 w-full space-y-5 items-center place-items-center"
-      >
+      <div className="flex flex-col lg:grid grid-cols-2 w-full space-y-5 items-start lg:items-center place-items-center">
         <h1 className="h-full font-bold uppercase headings !text-left  text-wrap">
           {car.model}
         </h1>

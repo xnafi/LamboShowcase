@@ -1,18 +1,66 @@
 import Image from "next/image";
 import { allCarData, lamborghiniCars } from "../cars";
+import Link from "next/link";
 
 export default function car() {
   return (
-    <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full place-items-center gap-10 px-4 mt-[30%] md:mt-[13%]">
+    <div className=" grid grid-cols-1  w-full place-items-center gap-10 px-4 mt-[40%] md:mt-[13%]">
       {lamborghiniCars.map((car: allCarData) => (
-        <div key={car.id} className="text-white w-full">
-          <h2>{car.model}</h2>
-          <p>Year: {car.yearOfMake}</p>
-          <p>Fuel Type: {car.fuelType}</p>
-          <p>Top Speed: {car.topSpeed}</p>
-          <p>Price: {car.price}</p>
-          <p>Details: {car.details.slice(0, 200)}</p>
-          <Image height={100} width={100} src={car.image} alt={car.model} />
+        <div
+          key={car.id}
+          className="h-full flex flex-col justify-center items-center space-y-6 text-white"
+        >
+          <div>
+            <h1 className="h-full font-bold uppercase headings !text-left  text-wrap">
+              {car.model}
+            </h1>
+          </div>
+          <div className="w-full flex flex-col">
+            {/* car image */}
+            <Image
+              alt="lambo"
+              src={car.image}
+              className={`self-center relative`}
+              quality={100}
+              height={200}
+              width={900}
+              style={{
+                objectFit: "contain",
+              }}
+              sizes="90vw"
+            />
+          </div>
+          <div className="flex flex-col md:grid grid-cols-2 mx-auto w-full gap-y-5 ">
+            <p className="h-full font-bold uppercase sub-heading !text-white">
+              vehicle category : {car.category}
+            </p>
+            <p className="h-full font-bold uppercase sub-heading !text-white ">
+              Year of Make: {car.yearOfMake}
+            </p>
+            <p className="h-full font-bold uppercase sub-heading !text-white ">
+              Fuel Type: {car.fuelType}
+            </p>
+
+            <p className="h-full font-bold uppercase sub-heading !text-white ">
+              Top Speed: {car.topSpeed}
+            </p>
+            <p className="h-full font-bold uppercase sub-heading !text-white ">
+              Price: {car.price}
+            </p>
+          </div>
+          <div>
+            <p className="h-full font-bold uppercase sub-heading !text-white">
+              Details :
+              <span className="primary-text !text-white"> {car.details}</span>
+              ...
+              <Link
+                className="cursor-pointer text-yellow-900 z-[2] self-center font-bold !text-xl"
+                href={`/car/details/${car.id}`}
+              >
+                more
+              </Link>
+            </p>
+          </div>
         </div>
       ))}
     </div>
