@@ -35,7 +35,7 @@ export default function CarDetails() {
     );
   }
   return (
-    <div className="h-full md:max-w-[1400px] flex flex-col justify-center text-white  mt-[35%] md:mt-[20%] lg:mt-[15%]">
+    <div className="h-full md:max-w-[1400px] flex flex-col justify-center px-4 space-y-6 text-white  mt-[40%] md:mt-[23%] lg:mt-[15%] xl:mt-[10%]">
       <div className="w-full flex flex-col">
         {/* car image */}
         <Image
@@ -44,36 +44,41 @@ export default function CarDetails() {
           className={`self-center relative`}
           quality={100}
           height={200}
-          width={1000}
+          width={900}
           style={{
             objectFit: "contain",
           }}
           sizes="90vw"
         />
       </div>
-      <div className="flex flex-col w-[90%] mx-auto justify-center items-center space-y-3">
-        <h1 className="h-full font-bold uppercase headings !text-left self-start">
+      <div
+        // style={{ justifyItems: "center" }}
+        className="flex flex-col lg:grid grid-cols-2 w-full space-y-5 items-center place-items-center"
+      >
+        <h1 className="h-full font-bold uppercase headings !text-left  text-wrap">
           {car.model}
         </h1>
 
-        <p className="h-full font-bold uppercase sub-heading !text-white self-start">
+        <p className="h-full font-bold uppercase sub-heading !text-white">
           vehicle category : {car.category}
         </p>
-        <p className="h-full font-bold uppercase sub-heading !text-white self-start">
+        <p className="h-full font-bold uppercase sub-heading !text-white ">
           Year of Make: {car.yearOfMake}
         </p>
-        <p className="h-full font-bold uppercase sub-heading !text-white self-start">
+        <p className="h-full font-bold uppercase sub-heading !text-white ">
           Fuel Type: {car.fuelType}
         </p>
 
-        <p className="h-full font-bold uppercase sub-heading !text-white self-start">
+        <p className="h-full font-bold uppercase sub-heading !text-white ">
           Top Speed: {car.topSpeed}
         </p>
-        <p className="h-full font-bold uppercase sub-heading !text-white self-start">
+        <p className="h-full font-bold uppercase sub-heading !text-white ">
           Price: {car.price}
         </p>
-        <p className="h-full font-bold uppercase sub-heading !text-white self-start">
-          Details :{" "}
+      </div>
+      <div>
+        <p className="h-full font-bold uppercase sub-heading !text-white lg:text-center  md:w-[95%] lg:mx-auto">
+          Details :
           <span className="primary-text !text-white"> {car.details}</span>
         </p>
       </div>
