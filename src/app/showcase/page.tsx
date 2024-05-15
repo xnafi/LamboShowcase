@@ -1,10 +1,10 @@
 import ShowCaseItems from "@/components/ShowCase/ShowCaseItems";
 import ShowCaseLayout from "../layout";
-import { useSpring, useTransform, motion } from "framer-motion";
+import { useSpring, useTransform, motion } from 'framer-motion';
 
 const ShowCase = ({ scrollYProgress }: any) => {
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.1]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [1, 10]);
+  const scale = useTransform(scrollYProgress, [0, 100], [1, 0]);
+  const rotate = useTransform(scrollYProgress, [0, -100], [1, 100]);
   const springScale = useSpring(scale, { stiffness: 500, damping: 50 });
   const springRotate = useSpring(rotate, { stiffness: 500, damping: 50 });
   return (
