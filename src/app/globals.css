@@ -16,6 +16,9 @@
     @apply text-sm md:text-lg border;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 .buttonPrimary {
   background: transparent;
   border: none;

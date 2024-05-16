@@ -32,7 +32,7 @@ const CutoutTextLoader = ({ height, background, imgUrl }: IEimage) => {
         className="absolute inset-0 animate-pulse z-10"
       />
       <span
-        className="font-black absolute inset-0 z-20 text-center bg-clip-text text-transparent pointer-events-none"
+        className="font-black absolute inset-0 z-20 text-center bg-clip-text text-transparent pointer-events-none bg-white"
         style={{
           backgroundImage: `url(${imgUrl})`,
           backgroundPosition: "center",
