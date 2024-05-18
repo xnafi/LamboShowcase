@@ -1,5 +1,5 @@
 import ShowCaseItems from "@/components/ShowCase/ShowCaseItems";
-// import { useSpring, useTransform, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const ShowCase = ({ scrollYProgress }: any) => {
   // const scale = useTransform(scrollYProgress, [0, 100], [1, 0]);
