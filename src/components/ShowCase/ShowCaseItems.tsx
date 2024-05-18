@@ -70,7 +70,7 @@ export default function ShowCaseItems() {
         {lamborghiniCars.map((car) => (
           <SwiperSlide
             key={car.id}
-            className={` rounded-xl mx-auto border shadow-lg !h-full md:!h-[80vh]`}
+            className={` rounded-xl mx-auto bg-white shadow-lg !h-full md:!h-[80vh]`}
           >
             <motion.div
               initial={{ y: 0, opacity: 1 }}
@@ -83,11 +83,11 @@ export default function ShowCaseItems() {
               }}
               className="flex justify-between px-2 md:px-[10%] mt-[15%] md:mt-[10%] lg:mt-[5%] self-start w-[100%] absolute"
             >
-              <p className="text-center sub-heading font-bold !text-white">
+              <p className="text-center sub-heading font-bold text-black">
                 model : {car.model.slice(0, 10)}...
               </p>
               {/* Second child */}
-              <p className="text-center sub-heading font-bold !text-white">
+              <p className="text-center sub-heading font-bold">
                 top speed : {car.topSpeed}
               </p>
             </motion.div>
@@ -134,20 +134,20 @@ export default function ShowCaseItems() {
               }}
               className="flex px-2 md:px-[10%] flex-col absolute w-full bottom-[8%] md:bottom-[10%]"
             >
-              <p className="text-center primary-text font-bold !text-white hidden md:block">
+              <p className="text-center primary-text font-bold text-black hidden md:block">
                 {car.details.slice(0, 400)}
                 <Link
-                  className="cursor-pointer !text-white z-[2] self-center font-bold !text-md"
+                  className="cursor-pointer text-yellow-900 z-[2] self-center font-bold !text-md"
                   href={`/car/details/${car.id}`}
                 >
-                  ... more
+                  more
                 </Link>
               </p>
 
-              <p className="text-center primary-text font-bold block md:hidden !text-white">
+              <p className="text-center primary-text font-bold block md:hidden text-yellow-300">
                 {car.details.slice(0, 200)}...
                 <Link
-                  className="cursor-pointer text-white z-[1] self-center font-bold !text-md"
+                  className="cursor-pointer text-yellow-900 z-[1] self-center font-bold !text-md"
                   href={`/car/details/${car.id}`}
                 >
                   more
