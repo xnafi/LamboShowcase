@@ -43,12 +43,13 @@ export default function CarDetails() {
           src={car.image}
           className={`self-center relative`}
           quality={100}
-          height={200}
-          width={900}
+          height={1200}
+          width={1200}
           style={{
             objectFit: "contain",
+            width: "auto",
+            height: "auto",
           }}
-          sizes="90vw"
         />
       </div>
       <div className="flex flex-col lg:grid grid-cols-2 mx-auto gap-5 items-start w-full md:w-[90%]">
