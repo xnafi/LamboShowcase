@@ -15,7 +15,8 @@ import "./banner.css";
 import { useRef } from "react";
 
 const Banner = ({ scrollYProgress }: any) => {
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.1]);
+  const scale = useTransform(scrollYProgress, [0, 0.1], [1, 0.7]);
+  const opacity = useTransform(scrollYProgress, [1, 0], [0, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 10]);
   const springScale = useSpring(scale, { stiffness: 500, damping: 50 });
   const springRotate = useSpring(rotate, { stiffness: 500, damping: 50 });
@@ -37,7 +38,7 @@ const Banner = ({ scrollYProgress }: any) => {
 
   return (
     <motion.div
-      style={{ scale: springScale, rotate: springRotate }}
+      style={{ scale: springScale, rotate: springRotate, opacity: opacity }}
       className="sticky top-0 h-screen"
     >
       <Swiper
