@@ -11,9 +11,16 @@ import { loadSlim } from "@tsparticles/slim";
 
 const ParticlesComponent = () => {
   const [init, setInit] = useState(false);
+  // this should be run only once per application lifetime
   useEffect(() => {
     initParticlesEngine(async (engine: Engine) => {
+      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+      // starting from v2 you can add only the features you need reducing the bundle size
+      //await loadAll(engine);
+      //await loadFull(engine);
       await loadSlim(engine);
+      //await loadBasic(engine);
     }).then(() => {
       setInit(true);
     });
@@ -70,23 +77,23 @@ const ParticlesComponent = () => {
             default: "out",
           },
           random: false,
-          speed: 5,
+          speed: 3,
           straight: false,
         },
         number: {
           density: {
             enable: true,
           },
-          value: 80,
+          value: 100,
         },
         opacity: {
-          value: 0.8,
+          value: 0.5,
         },
         shape: {
-          type: "square",
+          type: "circle",
         },
         size: {
-          value: { min: 3, max: 7 },
+          value: { min: 1, max: 5 },
         },
       },
       detectRetina: true,
