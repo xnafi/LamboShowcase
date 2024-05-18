@@ -1,16 +1,10 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { lamborghiniCars, allCarData } from "@/app/cars";
+import { lamborghiniCars } from "@/app/cars";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper/modules";
-import {
-  motion,
-  useAnimation,
-  stagger,
-  delay,
-  useAnimate,
-} from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useRef, useState } from "react";
 
 export default function ShowCaseItems() {
@@ -46,7 +40,7 @@ export default function ShowCaseItems() {
   };
 
   return (
-    <div className="h-[60vh] md:h-[100vh] w-[90vw] md:max-w-[1400px] mx-auto rounded-xl bg-gradient-to-br">
+    <div className="h-[70vh] md:h-[100vh] w-[90vw] md:max-w-[1400px] mx-auto rounded-xl bg-gradient-to-br">
       <Swiper
         ref={swiperRef}
         key={carId}
@@ -65,12 +59,12 @@ export default function ShowCaseItems() {
           margin: "0px",
           position: "relative",
         }}
-        onSlideChange={handleSlideChange} 
+        onSlideChange={handleSlideChange}
       >
         {lamborghiniCars.map((car) => (
           <SwiperSlide
             key={car.id}
-            className={` rounded-xl mx-auto shadow-lg !h-full md:!h-[80vh] border`}
+            className={` rounded-xl mx-auto shadow-lg !h-full md:!h-[70vh] xl:!h-[80vh] border`}
           >
             <motion.div
               initial={{ y: 0, opacity: 1 }}
@@ -83,13 +77,14 @@ export default function ShowCaseItems() {
               }}
               className="flex justify-between px-2 md:px-[10%] mt-[15%] md:mt-[10%] lg:mt-[5%] self-start w-[100%] absolute"
             >
-              <p className="text-center sub-heading font-bold !text-white">
-                model : {car.model.slice(0, 10)}...
-              </p>
-              {/* Second child */}
-              <p className="text-center sub-heading font-bold !text-white">
-                top speed : {car.topSpeed}
-              </p>
+              <div className="flex flex-col md:flex-row gap-5 md:justify-between w-full">
+                <p className=" sub-heading font-bold !text-white">
+                  model : {car.model.slice(0, 10)}...
+                </p>
+                <p className=" sub-heading font-bold !text-white">
+                  top speed : {car.topSpeed}
+                </p>
+              </div>
             </motion.div>
             <motion.div
               className=" z-[2] flex flex-col w-full h-full"
@@ -145,7 +140,7 @@ export default function ShowCaseItems() {
               </p>
 
               <p className="text-center primary-text font-bold block md:hidden !text-white">
-                {car.details.slice(0, 200)}...
+                {car.details.slice(0, 350)}...
                 <Link
                   className="cursor-pointer !text-white z-[1] self-center font-bold !text-md"
                   href={`/car/details/${car.id}`}

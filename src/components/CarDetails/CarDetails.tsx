@@ -51,30 +51,30 @@ export default function CarDetails() {
           sizes="90vw"
         />
       </div>
-      <div className="flex flex-col lg:grid grid-cols-2 mx-auto space-y-5 items-start w-full md:w-[90%]">
-        <h1 className="h-full font-bold uppercase headings !text-left  text-wrap">
+      <div className="flex flex-col lg:grid grid-cols-2 mx-auto gap-5 items-start w-full md:w-[90%]">
+        <h1 className="font-bold uppercase sub-heading  !text-white">
           {car.model}
         </h1>
 
-        <p className="h-full font-bold uppercase sub-heading !text-white">
+        <p className="font-bold uppercase sub-heading  !text-white">
           vehicle category : {car.category}
         </p>
-        <p className="h-full font-bold uppercase sub-heading !text-white ">
+        <p className="font-bold uppercase sub-heading !text-white ">
           Year of Make: {car.yearOfMake}
         </p>
-        <p className="h-full font-bold uppercase sub-heading !text-white ">
+        <p className="font-bold uppercase sub-heading !text-white ">
           Fuel Type: {car.fuelType}
         </p>
 
-        <p className="h-full font-bold uppercase sub-heading !text-white ">
+        <p className="font-bold uppercase sub-heading !text-white ">
           Top Speed: {car.topSpeed}
         </p>
-        <p className="h-full font-bold uppercase sub-heading !text-white ">
+        <p className="font-bold uppercase sub-heading !text-white ">
           Price: {car.price}
         </p>
       </div>
       <div>
-        <p className="h-full font-bold uppercase sub-heading !text-white lg:text-left w-full md:w-[90%] lg:mx-auto">
+        <p className="font-bold uppercase sub-heading !text-white lg:text-left w-full md:w-[90%] lg:mx-auto">
           Details :
           <span className="primary-text !text-white"> {car.details}</span>
         </p>
