@@ -1,3 +1,4 @@
+"use client";
 import ShowCaseItems from "@/components/ShowCase/ShowCaseItems";
 import { useSpring, useTransform, motion } from "framer-motion";
 import { useEffect } from "react";
