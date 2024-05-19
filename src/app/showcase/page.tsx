@@ -16,7 +16,7 @@ const ShowCase = ({ scrollYProgress }: any) => {
         <h1 className="headings text-yellow-600 mb-10">SPEEDING</h1>
         <h1 className="headings text-yellow-600 mb-10"> BEASTS</h1>
       </div>
-
+      {/* showcase cars */}
       <ShowCaseItems />
     </div>
   );
