@@ -3,7 +3,8 @@ import { useScroll } from "framer-motion";
 import Banner from "../../components/Banner/Banner";
 import ShowCase from "../showcase/page";
 import { useRef } from "react";
-import CarDetails from "@/components/CarDetails/CarDetails";
+import About from "../about/page";
+import Footer from "@/components/shared/footer";
 
 export default function Home() {
   const container = useRef<HTMLDivElement | null>(null);
@@ -13,9 +14,10 @@ export default function Home() {
     offset: ["start start", "end end"],
   });
   return (
-    <div ref={container} className="relative h-[200vh]">
+    <div ref={container} className="relative h-[300vh]">
       <Banner scrollYProgress={scrollYProgress} />
       <ShowCase scrollYProgress={scrollYProgress} />
+      <About />
     </div>
   );
 }

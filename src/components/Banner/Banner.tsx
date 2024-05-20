@@ -15,8 +15,8 @@ import "./banner.css";
 import { useRef } from "react";
 
 const Banner = ({ scrollYProgress }: any) => {
-  const scale = useTransform(scrollYProgress, [0, 0.1], [1, 0.7]);
-  const opacity = useTransform(scrollYProgress, [1, 0.1], [-1, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.4]);
+  const opacity = useTransform(scrollYProgress, [1, 0], [-1, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 10]);
   const springScale = useSpring(scale, { stiffness: 600, damping: 50 });
   const springRotate = useSpring(rotate, { stiffness: 600, damping: 50 });
