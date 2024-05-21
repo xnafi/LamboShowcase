@@ -8,6 +8,7 @@ import { useRef, useState } from "react";
 import { lamborghiniCars } from "@/data/cars";
 
 export default function ShowCaseItems({ scrollYProgress }: any) {
+  console.log("🚀 ~ ShowCaseItems ~ scrollYProgress:", scrollYProgress);
   const [carId, setCarId] = useState(null);
   const swiperRef = useRef(null);
   const animationControls = useAnimation();

@@ -4,7 +4,6 @@ import Banner from "../../components/Banner/Banner";
 import ShowCase from "../showcase/page";
 import { useRef } from "react";
 import About from "../about/page";
-import Footer from "@/components/shared/footer";
 
 export default function Home() {
   const container = useRef<HTMLDivElement | null>(null);
@@ -16,7 +15,9 @@ export default function Home() {
   return (
     <div ref={container} className="relative h-[300vh]">
       <Banner scrollYProgress={scrollYProgress} />
-      <ShowCase scrollYProgress={scrollYProgress} />
+      {scrollYProgress !== undefined && (
+        <ShowCase scrollYProgress={scrollYProgress} />
+      )}
       <About />
     </div>
   );
