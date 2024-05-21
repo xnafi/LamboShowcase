@@ -1,4 +1,3 @@
-"use client";
 import ShowCaseItems from "@/components/ShowCase/ShowCaseItems";
 
 const ShowCase = ({ scrollYProgress }: any) => {
