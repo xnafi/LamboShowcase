@@ -13,6 +13,11 @@ export interface ShowCaseItemsProps {
 }
 
 const ShowCaseItems: React.FC<ShowCaseItemsProps> = ({ scrollYProgress }) => {
+  if (!scrollYProgress) {
+    console.log("not found", scrollYProgress);
+  } else {
+    console.log("found", scrollYProgress);
+  }
   const [carId, setCarId] = useState(null);
   const swiperRef = useRef(null);
   const animationControls = useAnimation();
