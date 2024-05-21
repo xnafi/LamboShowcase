@@ -1,5 +1,6 @@
 "use client";
-import { allCarData, lamborghiniCars } from "@/app/cars";
+
+import { allCarData, lamborghiniCars } from "@/data/cars";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -8,7 +9,7 @@ export default function CarDetails() {
   const router = useParams();
   const { id } = router;
   const carId = Array.isArray(id) ? id[0] : id;
-  const car = lamborghiniCars.find(
+  const car = lamborghiniCars?.find(
     (car: allCarData) => car.id === parseInt(carId as string)
   );
 

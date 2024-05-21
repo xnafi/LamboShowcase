@@ -1,11 +1,12 @@
+import { allCarData, lamborghiniCars } from "@/data/cars";
 import Image from "next/image";
-import { allCarData, lamborghiniCars } from "../cars";
+
 import Link from "next/link";
 
 export default function car() {
   return (
     <div className=" grid grid-cols-1  w-full place-items-center gap-10 px-4 mt-[40%] md:mt-[13%]">
-      {lamborghiniCars.map((car: allCarData) => (
+      {lamborghiniCars?.map((car: allCarData) => (
         <div
           key={car.id}
           className="h-full flex flex-col justify-center items-center space-y-6 text-white"
