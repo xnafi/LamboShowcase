@@ -4,16 +4,37 @@ import Link from "next/link";
 import { lamborghiniCars } from "@/data/cars";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper/modules";
-import { motion, useAnimation, useSpring, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
+import {
+  MotionValue,
+  motion,
+  useAnimation,
+  useSpring,
+  useTransform,
+} from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { allCarData } from "../../data/cars";
 
-export interface ShowCaseItemsProps {
-  scrollYProgress: any;
+interface ShowCaseItemsProps {
+  scrollYProgress: MotionValue<number>;
 }
 
 const ShowCaseItems: React.FC<ShowCaseItemsProps> = ({ scrollYProgress }) => {
-  console.log("🚀 ~ scrollYProgress:", scrollYProgress)
+  const [progress, setProgress] = useState<number>(0);
+
+  useEffect(() => {
+    const handleScrollProgress = (latest: number) => {
+      setProgress(latest);
+    };
+
+    // Subscribe to scrollYProgress changes
+    const unsubscribe = scrollYProgress.on("change", handleScrollProgress);
+
+    // Clean up subscription on unmount
+    return () => {
+      unsubscribe();
+    };
+  }, [scrollYProgress]);
+
   const [carId, setCarId] = useState(null);
   const swiperRef = useRef(null);
   const animationControls = useAnimation();
