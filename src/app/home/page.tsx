@@ -12,12 +12,11 @@ export default function Home() {
     target: container,
     offset: ["start start", "end end"],
   });
+
   return (
     <div ref={container} className="relative h-[300vh]">
       <Banner scrollYProgress={scrollYProgress} />
-      {scrollYProgress !== undefined && (
-        <ShowCase scrollYProgress={scrollYProgress} />
-      )}
+      <ShowCase scrollYProgress={scrollYProgress} />
       <About />
     </div>
   );

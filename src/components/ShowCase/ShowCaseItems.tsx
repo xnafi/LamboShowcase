@@ -1,19 +1,24 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { lamborghiniCars } from "@/data/cars";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper/modules";
 import { motion, useAnimation, useSpring, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
-import { lamborghiniCars } from "@/data/cars";
+import { allCarData } from "../../data/cars";
 
-export default function ShowCaseItems({ scrollYProgress }: any) {
-  console.log("🚀 ~ ShowCaseItems ~ scrollYProgress:", scrollYProgress);
+export interface ShowCaseItemsProps {
+  scrollYProgress: any;
+}
+
+const ShowCaseItems: React.FC<ShowCaseItemsProps> = ({ scrollYProgress }) => {
   const [carId, setCarId] = useState(null);
   const swiperRef = useRef(null);
   const animationControls = useAnimation();
   const animateImage = useAnimation();
   const animatePara = useAnimation();
+  const cars = lamborghiniCars;
 
   // Transform values to achieve the desired scaling effect
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.5, 1, 0.5]);
@@ -82,7 +87,7 @@ export default function ShowCaseItems({ scrollYProgress }: any) {
           }}
           onSlideChange={handleSlideChange}
         >
-          {lamborghiniCars?.map((car) => (
+          {cars?.map((car: allCarData) => (
             <SwiperSlide
               key={car.id}
               className={`rounded-xl mx-auto shadow-lg !h-full md:!h-[70vh] xl:!h-[80vh]`}
@@ -174,4 +179,6 @@ export default function ShowCaseItems({ scrollYProgress }: any) {
       </div>
     </motion.div>
   );
-}
+};
+
+export default ShowCaseItems;
