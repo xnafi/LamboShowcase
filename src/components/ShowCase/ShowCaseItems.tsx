@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { lamborghiniCars } from "@/app/cars";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper/modules";
 import { motion, useAnimation, useSpring, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
+import { lamborghiniCars } from "@/data/cars";
 
 export default function ShowCaseItems({ scrollYProgress }: any) {
   const [carId, setCarId] = useState(null);
@@ -81,7 +81,7 @@ export default function ShowCaseItems({ scrollYProgress }: any) {
           }}
           onSlideChange={handleSlideChange}
         >
-          {lamborghiniCars.map((car) => (
+          {lamborghiniCars?.map((car) => (
             <SwiperSlide
               key={car.id}
               className={`rounded-xl mx-auto shadow-lg !h-full md:!h-[70vh] xl:!h-[80vh]`}

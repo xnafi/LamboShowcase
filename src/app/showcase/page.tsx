@@ -1,5 +1,4 @@
 import ShowCaseItems from "@/components/ShowCase/ShowCaseItems";
-import ShowCaseLayout from "../layout";
 
 const ShowCase = ({ scrollYProgress }: any) => {
   return (
