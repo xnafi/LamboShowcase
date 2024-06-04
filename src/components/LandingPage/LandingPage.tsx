@@ -1,8 +1,9 @@
 "use client";
 import React, { useRef } from "react";
-import { useScroll } from "framer-motion";
+import { useScroll, useSpring, motion } from "framer-motion";
 import Banner from "../Banner/Banner";
 import ShowCaseItems from "../ShowCase/ShowCaseItems";
+import About from "../About/About";
 
 export default function LandingPage() {
   const container = useRef<HTMLDivElement | null>(null);
@@ -12,11 +13,17 @@ export default function LandingPage() {
     target: container,
     offset: ["start start", "end end"],
   });
+  const smoothProgress = useSpring(scrollYProgress, { mass: 0.01 });
 
   return (
-    <div ref={container} className="relative h-[300vh]">
+    <motion.div
+      style={{ scrollBehavior: smoothProgress }}
+      ref={container}
+      className="relative h-full"
+    >
       <Banner scrollYProgress={scrollYProgress} />
       <ShowCaseItems scrollYProgress={scrollYProgress} />
-    </div>
+      <About scrollYProgress={scrollYProgress} />
+    </motion.div>
   );
 }

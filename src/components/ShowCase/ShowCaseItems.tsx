@@ -82,13 +82,13 @@ const ShowCaseItems: React.FC<ShowCaseItemsProps> = ({ scrollYProgress }) => {
         rotate: springRotate,
         opacity: springOpacity,
       }}
-      className="grid place-items-center"
+      className="grid h-[100vh]"
     >
-      <div className="flex gap-x-3 md:gap-x-4">
-        <h1 className="headings text-yellow-600 mb-10">SPEEDING</h1>
-        <h1 className="headings text-yellow-600 mb-10"> BEASTS</h1>
+      <div className="flex space-x-3 md:space-x-4 mt-20 mx-auto">
+        <h1 className="headings text-yellow-600 !leading-loose">SPEEDING</h1>
+        <h1 className="headings text-yellow-600 !leading-loose"> BEASTS</h1>
       </div>
-      <div className="h-[70vh] md:h-full w-[90vw] md:max-w-[1400px] mx-auto rounded-xl bg-gradient-to-br border">
+      <div className="h-[70vh] md:h-[74vh] lg:h-[70vh] w-[90vw] md:max-w-[1400px] mx-auto rounded-xl border">
         <Swiper
           ref={swiperRef}
           key={carId}
@@ -112,7 +112,7 @@ const ShowCaseItems: React.FC<ShowCaseItemsProps> = ({ scrollYProgress }) => {
           {cars?.map((car: allCarData) => (
             <SwiperSlide
               key={car.id}
-              className={`rounded-xl mx-auto shadow-lg !h-full md:!h-[70vh] xl:!h-[80vh]`}
+              className={`rounded-xl mx-auto shadow-lg`}
             >
               <motion.div
                 initial={{ y: 0, opacity: 1 }}
@@ -152,7 +152,7 @@ const ShowCaseItems: React.FC<ShowCaseItemsProps> = ({ scrollYProgress }) => {
                 >
                   <Image
                     src={car.image}
-                    className="top-[1%] lg:top-[20%] !h-[80%] md:!h-[50%] self-center mx-auto relative"
+                    className="top-[1%] md:top-[20%] !h-[80%] md:!h-[50%] self-center mx-auto relative"
                     quality={100}
                     width={1000}
                     height={1000}

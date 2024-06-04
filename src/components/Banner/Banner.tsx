@@ -18,9 +18,21 @@ const Banner = ({ scrollYProgress }: any) => {
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.4]);
   const opacity = useTransform(scrollYProgress, [1, 0], [-1, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 10]);
-  const springScale = useSpring(scale, { stiffness: 600, damping: 50 });
-  const springRotate = useSpring(rotate, { stiffness: 600, damping: 50 });
-  const springOpacity = useSpring(opacity, { stiffness: 600, damping: 50 });
+  const springScale = useSpring(scale, {
+    stiffness: 600,
+    damping: 50,
+    mass: 1,
+  });
+  const springRotate = useSpring(rotate, {
+    stiffness: 600,
+    damping: 50,
+    mass: 1,
+  });
+  const springOpacity = useSpring(opacity, {
+    stiffness: 600,
+    damping: 50,
+    mass: 1,
+  });
 
   const progressCircle = useRef<any>(null);
   const progressContent = useRef<any>(null);
@@ -44,7 +56,7 @@ const Banner = ({ scrollYProgress }: any) => {
         rotate: springRotate,
         opacity: springOpacity,
       }}
-      className="sticky top-0 h-screen"
+      className="sticky top-0 h-[100vh]"
     >
       <Swiper
         autoplay={{
