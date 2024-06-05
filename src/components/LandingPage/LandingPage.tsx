@@ -2,8 +2,9 @@
 import React, { useRef } from "react";
 import { useScroll, useSpring, motion } from "framer-motion";
 import Banner from "../Banner/Banner";
-import ShowCaseItems from "../ShowCase/ShowCaseItems";
+
 import About from "../About/About";
+import ShowCaseItems from "../ShowCase/ShowCaseItems";
 
 export default function LandingPage() {
   const container = useRef<HTMLDivElement | null>(null);

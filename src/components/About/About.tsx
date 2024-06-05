@@ -18,7 +18,7 @@ export default function About({ scrollYProgress }: any) {
   }, [scrollYProgress]);
 
   return (
-    <div className="h-screen w-full md:max-w-[1400px] mx-auto md:px-10 px-2 mt-20">
+    <div className="h-screen w-full md:max-w-[1400px] mx-auto md:px-10 px-2 mt-20 overflow-hidden">
       <h1 className="text-5xl text-white">about</h1>
     </div>
   );
