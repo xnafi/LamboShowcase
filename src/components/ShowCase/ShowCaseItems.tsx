@@ -43,9 +43,13 @@ const ShowCaseItems: React.FC<ShowCaseItemsProps> = ({ scrollYProgress }) => {
   const cars = lamborghiniCars;
 
   // Transform values to achieve the desired scaling effect
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.5, 1, 0.5]);
-  const rotate = useTransform(scrollYProgress, [0, 0.5, 1], [5, 0, 5]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 0.7], [0, 1, 0]);
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.5, 1],
+    [0.5, 1, 1, 0.5]
+  );
+  const rotate = useTransform(scrollYProgress, [0, 0.2, 0.5, 1], [5, 0, 0, 5]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.5, 1], [0, 1, 1, 0]);
   const springScale = useSpring(scale, { stiffness: 500, damping: 50 });
   const springRotate = useSpring(rotate, { stiffness: 500, damping: 50 });
   const springOpacity = useSpring(opacity, { stiffness: 500, damping: 50 });
@@ -85,10 +89,10 @@ const ShowCaseItems: React.FC<ShowCaseItemsProps> = ({ scrollYProgress }) => {
       className="grid place-items-center"
     >
       <div className="flex gap-x-3 md:gap-x-4">
-        <h1 className="headings text-yellow-600 mb-10">SPEEDING</h1>
-        <h1 className="headings text-yellow-600 mb-10"> BEASTS</h1>
+        <h1 className="headings text-yellow-600 my-2">SPEEDING</h1>
+        <h1 className="headings text-yellow-600 my-2"> BEASTS</h1>
       </div>
-      <div className="h-[70vh] md:h-full w-[90vw] md:max-w-[1400px] mx-auto rounded-xl bg-gradient-to-br border">
+      <div className="h-[80vh] md:h-full w-[90vw] md:max-w-[1400px] mx-auto rounded-xl bg-gradient-to-br border">
         <Swiper
           ref={swiperRef}
           key={carId}
