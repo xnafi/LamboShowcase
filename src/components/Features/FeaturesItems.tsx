@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { motion, useTransform, useSpring, MotionValue } from "framer-motion";
 
-export default function FeaturesItems() {
+interface FeaturesItemsProps {
+  scrollYProgress: MotionValue<number>;
+}
+
+const FeaturesItems: React.FC<FeaturesItemsProps> = ({ scrollYProgress }) => {
   type LamborghiniFeature = {
     title: string;
     description: string;
@@ -38,16 +43,40 @@ export default function FeaturesItems() {
         "Inside a Lamborghini, drivers and passengers are surrounded by luxury. The interiors feature the finest materials, such as premium leather and Alcantara, and advanced technology, providing both comfort and a high-end aesthetic.",
     },
   ];
+  const yTransform = useTransform(scrollYProgress, [0, 1], [500, -300]);
+  const springYTransform = useSpring(yTransform, {
+    stiffness: 100,
+    damping: 20,
+  });
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5">
-      {lamborghiniFeatures.map((feature) => (
-        <div key={feature.title} className="space-y-2">
-          <h2 className="feature-title text-white">{feature.title}</h2>
-          <p className="feature-description !text-white/50">
-            {feature.description}
-          </p>
-        </div>
-      ))}
+    <div className="flex flex-col items-center ">
+      <motion.h1
+        style={{
+          y: springYTransform,
+        }}
+        className="headings !text-white text-center my-5 mt-[25%]"
+      >
+        THE FEATURES
+      </motion.h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 ">
+        {lamborghiniFeatures.map((feature) => (
+          <motion.div
+            key={feature.title}
+            style={{
+              y: springYTransform,
+            }}
+            className="space-y-2"
+          >
+            <h2 className="feature-title text-white">{feature.title}</h2>
+            <p className="feature-description !text-white/50">
+              {feature.description}
+            </p>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
-}
+};
+
+export default FeaturesItems;

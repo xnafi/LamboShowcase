@@ -26,7 +26,7 @@ export default function LandingPage() {
       <Banner scrollYProgress={scrollYProgress} />
       <ShowCaseItems scrollYProgress={scrollYProgress} />
       <About scrollYProgress={scrollYProgress} />
-      <Features/>
+      <Features scrollYProgress={scrollYProgress} />
     </motion.div>
   );
 }
