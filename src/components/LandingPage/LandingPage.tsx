@@ -5,6 +5,7 @@ import Banner from "../Banner/Banner";
 
 import About from "../About/About";
 import ShowCaseItems from "../ShowCase/ShowCaseItems";
+import Features from "../Features/Features";
 
 export default function LandingPage() {
   const container = useRef<HTMLDivElement | null>(null);
@@ -25,6 +26,7 @@ export default function LandingPage() {
       <Banner scrollYProgress={scrollYProgress} />
       <ShowCaseItems scrollYProgress={scrollYProgress} />
       <About scrollYProgress={scrollYProgress} />
+      <Features/>
     </motion.div>
   );
 }

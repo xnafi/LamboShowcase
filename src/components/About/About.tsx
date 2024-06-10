@@ -42,7 +42,7 @@ export default function About({ scrollYProgress }: any) {
   }, [scrollYProgress]);
 
   return (
-    <motion.div className="h-full lg:h-full w-full md:max-w-[1400px] mx-auto md:px-10 px-2 mt-20 overflow-hidden flex flex-col my-[10%]">
+    <motion.div className="h-full lg:h-full w-full md:max-w-[1400px] mx-auto md:px-10 px-4 mt-20 overflow-hidden flex flex-col my-[10%]">
       {/* about part one */}
       <div className="flex flex-col lg:flex-row w-full mt-[5%] items-base gap-x-0 lg:gap-x-6">
         <div className="w-full lg:w-1/2">
