@@ -55,7 +55,7 @@ const FeaturesItems: React.FC<FeaturesItemsProps> = ({ scrollYProgress }) => {
         style={{
           y: springYTransform,
         }}
-        className="headings !text-white text-center my-5 mt-[25%]"
+        className="headings !text-white text-center my-5 mt-[50%] md:mt-[34%] lg:mt-[30%] xl:mt-[25%]"
       >
         THE FEATURES
       </motion.h1>
