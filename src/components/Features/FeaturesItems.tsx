@@ -50,12 +50,12 @@ const FeaturesItems: React.FC<FeaturesItemsProps> = ({ scrollYProgress }) => {
   });
 
   return (
-    <div className="flex flex-col items-center ">
+    <div className="flex flex-col items-center w-full md:max-w-[1400px] mx-auto">
       <motion.h1
         style={{
           y: springYTransform,
         }}
-        className="headings !text-white text-center my-5 mt-[50%] md:mt-[34%] lg:mt-[30%] xl:mt-[25%]"
+        className="headings !text-white text-center my-5 mt-[50%] md:mt-[34%] lg:mt-[13%] xl:mt-[10%] 2xl:mt-[14%] "
       >
         THE FEATURES
       </motion.h1>

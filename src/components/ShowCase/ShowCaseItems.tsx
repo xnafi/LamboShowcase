@@ -86,7 +86,7 @@ const ShowCaseItems: React.FC<ShowCaseItemsProps> = ({ scrollYProgress }) => {
         rotate: springRotate,
         opacity: springOpacity,
       }}
-      className="grid place-items-center"
+      className="grid place-items-center mt-[20%] md:mt-[15%]"
     >
       <div className="flex gap-x-3 md:gap-x-4">
         <h1 className="headings text-yellow-600 my-2">SPEEDING</h1>
