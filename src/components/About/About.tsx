@@ -6,8 +6,10 @@ import about1 from "../../../public/assets/about1.jpg";
 import about2 from "../../../public/assets/about2.jpg";
 import arrow from "../../../public/assets/arrow-up-left.png";
 import arrow2 from "../../../public/assets/arrow-up-right.png";
+import { useScrollProgress } from "@/utils/ScrollContext";
 
-export default function About({ scrollYProgress }: any) {
+export default function About() {
+    const { scrollYProgress } = useScrollProgress();
   const [progress, setProgress] = useState<number>(0);
 
   // Transform values to achieve the desired scaling and rotating effect

@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -13,8 +12,11 @@ import lambo2 from "../../assets/banner/nathan-van-egmond-uwrTwMaxVR4-unsplash.j
 import lambo3 from "../../assets/banner/pexels-adrian-newell-6968984.jpg";
 import "./banner.css";
 import { useRef } from "react";
+import { useScrollProgress } from "@/utils/ScrollContext";
 
-const Banner = ({ scrollYProgress }: any) => {
+
+const Banner = () => {
+  const { scrollYProgress } = useScrollProgress();
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.4]);
   const opacity = useTransform(scrollYProgress, [0.4, 0], [-1, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 10]);

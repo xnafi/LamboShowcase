@@ -13,12 +13,10 @@ import {
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { allCarData } from "../../data/cars";
+import { useScrollProgress } from "@/utils/ScrollContext";
 
-interface ShowCaseItemsProps {
-  scrollYProgress: MotionValue<number>;
-}
-
-const ShowCaseItems: React.FC<ShowCaseItemsProps> = ({ scrollYProgress }) => {
+const ShowCaseItems = () => {
+  const { scrollYProgress } = useScrollProgress();
   const [progress, setProgress] = useState<number>(0);
 
   useEffect(() => {

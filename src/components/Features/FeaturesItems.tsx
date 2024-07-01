@@ -43,19 +43,19 @@ const FeaturesItems: React.FC<FeaturesItemsProps> = ({ scrollYProgress }) => {
         "Inside a Lamborghini, drivers and passengers are surrounded by luxury. The interiors feature the finest materials, such as premium leather and Alcantara, and advanced technology, providing both comfort and a high-end aesthetic.",
     },
   ];
-  const yTransform = useTransform(scrollYProgress, [0, 1], [500, -300]);
+  const yTransform = useTransform(scrollYProgress, [0, 1], [400, -100]);
   const springYTransform = useSpring(yTransform, {
     stiffness: 100,
     damping: 20,
   });
 
   return (
-    <div className="flex flex-col items-center w-full md:max-w-[1400px] mx-auto">
+    <div className="flex flex-col items-center w-full md:max-w-[1400px] mx-auto my-20">
       <motion.h1
         style={{
           y: springYTransform,
         }}
-        className="headings !text-white text-center my-5 mt-[50%] md:mt-[34%] lg:mt-[13%] xl:mt-[10%] 2xl:mt-[14%] "
+        className="headings !text-white text-center my-5"
       >
         THE FEATURES
       </motion.h1>
