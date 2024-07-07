@@ -1,33 +1,33 @@
 "use client";
-import Image from "next/image";
-import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import logo from "../../assets/logoWhite.png";
 import Link from "next/link";
-import TransitionLink from "../TranitionLink";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import logo from "../../assets/logoWhite.png";
 
-type INav = { name: string };
-
-// Define the navigation items array
-const navItems: INav[] = [
-  { name: "home" },
-  { name: "about" },
-  { name: "contact us" },
-];
-
-export default function Navbar({ Component, pageProps, router }: any) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const router = usePathname();
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
+  const isActive = (path: string) => router === path;
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
       if (window.scrollY > lastScrollY) {
-        // if scroll down hide the navbar
         setIsVisible(false);
       } else {
-        // if scroll up show the navbar
         setIsVisible(true);
       }
       setLastScrollY(window.scrollY);
@@ -37,160 +37,204 @@ export default function Navbar({ Component, pageProps, router }: any) {
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", controlNavbar);
-
-      // cleanup function
       return () => {
         window.removeEventListener("scroll", controlNavbar);
       };
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lastScrollY]);
 
   return (
     <motion.nav
-      className={`fixed navbar top-0 w-[100vw] max-h-[140px] z-[999] mx-auto`}
-      initial={{ opacity: 1 }}
-      animate={{ opacity: isVisible ? 1 : 0 }}
-      transition={{ duration: 0.5 }}
+      initial={{ y: -100 }}
+      animate={{ y: isVisible ? 0 : -100 }}
+      transition={{ ease: "easeOut", duration: 0.5 }}
+      className="bg-[#6F4E19]/50 text-white fixed top-0 w-full transition-all duration-500 z-[999] backdrop-blur-md"
     >
-      <div className="relative flex items-center justify-between mx-auto bg-transparent w-full h-[100px] max-w-[1400px] px-4 2xl:px-2">
-        <Link
-          href="/"
-          className="inline-flex items-start justify-start active:bg-none"
-        >
-          <Image
-            className="max-w-md md:hidden"
-            src={logo}
-            width={150}
-            alt="Logo"
-          />
-          <Image
-            className="md:block hidden"
-            src={logo}
-            width={150}
-            alt="Logo"
-          />
-        </Link>
-        <ul className="items-center hidden xl:space-x-5 uppercase font-bold text-sm lg:flex px-1 text-white menu menu-horizontal h-full lg:text-sm xl:text-base space-x-4">
-          {navItems.map((item) => (
-            <li
-              key={item.name}
-              className="hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in"
+      <div className="max-w-[1400px] mx-auto px-2 sm:px-6 lg:px-8">
+        <div className="relative flex items-center justify-between h-[100px] w-full">
+          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <button
+              onClick={handleToggle}
+              className="inline-flex items-center justify-center p-2 rounded-md hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded={isOpen}
             >
-              <TransitionLink
-                href={`/${item.name.replace(" ", "-")}`}
-                label={item.name}
-              ></TransitionLink>
-            </li>
-          ))}
-        </ul>
-        {/* Login And SignUp Button */}
-        <div className="gap-5 hidden lg:flex text-white">
-          <Link
-            href="/login"
-            className="btn-one hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in font-bold"
-          >
-            LOG IN
-          </Link>
-          <button className="btn-one hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in font-bold">
-            SIGN UP
-          </button>
-        </div>
-
-        <div className="lg:hidden">
-          <button
-            type="button"
-            className="p-2 -mr-1 transition duration-200 rounded text-white focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50"
-            onClick={() => setIsMenuOpen(true)}
-          >
-            <svg className="w-5 text-white" viewBox="0 0 24 24">
-              <path
-                fill="white"
-                d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
-              />
-              <path
-                fill="white"
-                d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"
-              />
-              <path
-                fill="white"
-                d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"
-              />
-            </svg>
-          </button>
-          {isMenuOpen && (
-            <div className="absolute top-0 left-0 w-full">
-              <div className="p-5 bg-[#11475B] border rounded shadow-sm z-[999] flex flex-col justify-center items-center">
-                <div className="self-end">
-                  <button
-                    type="button"
-                    className="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:text-yellow-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                    onClick={() => setIsMenuOpen(false)}
+              <span className="sr-only">Open main menu</span>
+              {!isOpen ? (
+                <svg
+                  className="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
+          <div className="flex-1 flex items-center justify-center mx-auto sm:items-stretch sm:justify-between w-full">
+            <div className="flex-shrink-0">
+              <Link href="/" onClick={handleClose}>
+                <Image src={logo} alt="logo" height={100} width={100} />
+              </Link>
+            </div>
+            <div className="hidden sm:flex sm:ml-2 justify-center items-center">
+              <div className="flex md:space-x-0 lg:space-x-4 items-center">
+                <Link href="/home">
+                  <span
+                    className={`px-3 py-2 rounded-md text-md font-medium ${
+                      isActive("/home")
+                        ? "bg-gray-900"
+                        : "text-gray-300 hover:bg-white/10 hover:text-white"
+                    }`}
                   >
-                    <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
-                      <path
-                        fill="white"
-                        d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <Link
-                      href="/"
-                      className="inline-flex items-start w-[261px] h-[77px]"
-                    >
-                      <Image src={logo} className="" alt="Logo" />
-                    </Link>
-                  </div>
-                </div>
-                <nav>
-                  <ul className="space-y-4 px-1 text-xl font-medium text-white menu menu-vertical text-center">
-                    <li className="hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in">
-                      <Link href="/" className="hover:text-yellow-500 !p-0">
-                        Home
-                      </Link>
-                    </li>
-                    <li className="hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in">
-                      <Link
-                        href="/services"
-                        className="hover:text-yellow-500 !p-0"
-                      >
-                        Services
-                      </Link>
-                    </li>
-                    <li className="hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in">
-                      <Link
-                        href="/about-us"
-                        className="hover:text-yellow-500 !p-0"
-                      >
-                        About Us
-                      </Link>
-                    </li>
-                    <li className="hover:text-yellow-500 hover:transition-all hover:duration-300 hover:ease-in">
-                      <Link
-                        href="/contact"
-                        className="hover:text-yellow-500 !p-0"
-                      >
-                        Contact Us
-                      </Link>
-                    </li>
-                    {/* Login And SignUp Button */}
-                    <div className="gap-5 flex">
-                      <Link href="/login">
-                        <button className="btn-one">Login</button>
-                      </Link>
-
-                      <button className="btn-one">Sign Up</button>
-                    </div>
-                  </ul>
-                </nav>
+                    Home
+                  </span>
+                </Link>
+                <Link href="/about">
+                  <span
+                    className={`px-3 py-2 rounded-md text-md font-medium ${
+                      isActive("/about")
+                        ? "bg-gray-900"
+                        : "text-gray-300 hover:bg-white/10 hover:text-white"
+                    }`}
+                  >
+                    About
+                  </span>
+                </Link>
+                <Link href="/contact">
+                  <span
+                    className={`px-3 py-2 rounded-md text-md font-medium ${
+                      isActive("/contact")
+                        ? "bg-gray-900"
+                        : "text-gray-300 hover:bg-white/10 hover:text-white"
+                    }`}
+                  >
+                    Contact
+                  </span>
+                </Link>
               </div>
             </div>
-          )}
+            <div className="hidden sm:flex sm:ml-2">
+              <div className="flex md:space-x-0 lg:space-x-4 items-center">
+                <Link href="/login">
+                  <span
+                    className={`px-3 py-2 rounded-md text-md font-medium ${
+                      isActive("/login")
+                        ? "bg-gray-900"
+                        : "text-gray-300 hover:bg-white/10 hover:text-white"
+                    }`}
+                  >
+                    Login
+                  </span>
+                </Link>
+                <Link href="/sign-up">
+                  <span
+                    className={`px-3 py-2 rounded-md text-md font-medium ${
+                      isActive("/sign-up")
+                        ? "bg-gray-900"
+                        : "text-gray-300 hover:bg-white/10 hover:text-white"
+                    }`}
+                  >
+                    Sign Up
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <motion.div
+        initial={{ height: 0 }}
+        animate={{ height: isOpen ? "auto" : 0 }}
+        className="sm:hidden overflow-hidden"
+      >
+        <div className="px-2 pt-2 pb-3 space-y-1">
+          <Link href="/" onClick={handleClose}>
+            <span
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive("/")
+                  ? "bg-gray-900"
+                  : "text-gray-300 hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              Home
+            </span>
+          </Link>
+          <Link href="/about" onClick={handleClose}>
+            <span
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive("/about")
+                  ? "bg-gray-900"
+                  : "text-gray-300 hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              About
+            </span>
+          </Link>
+
+          <Link href="/contact" onClick={handleClose}>
+            <span
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive("/contact")
+                  ? "bg-gray-900"
+                  : "text-gray-300 hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              Contact
+            </span>
+          </Link>
+          <Link href="/login" onClick={handleClose}>
+            <span
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive("/login")
+                  ? "bg-gray-900"
+                  : "text-gray-300 hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              Login
+            </span>
+          </Link>
+          <Link href="/sign-up" onClick={handleClose}>
+            <span
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive("/sign-up")
+                  ? "bg-gray-900"
+                  : "text-gray-300 hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              Sign Up
+            </span>
+          </Link>
+        </div>
+      </motion.div>
     </motion.nav>
   );
-}
+};
+
+export default Navbar;
