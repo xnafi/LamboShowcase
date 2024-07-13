@@ -69,7 +69,9 @@ const LoginPage = () => {
         <div className="text-white">
           <div className="mb-6 flex flex-col items-center ">
             <Image src={logo} width={250} height={250} priority alt="" />
-            <span className="text-gray-300 mt-2 uppercase">Enter Login Details</span>
+            <span className="text-gray-300 mt-2 uppercase">
+              Enter Login Details
+            </span>
           </div>
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -102,7 +104,7 @@ const LoginPage = () => {
               <input
                 className="rounded-3xl border-none bg-transparent bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
                 type="Password"
-                placeholder="*********"
+                placeholder="Password"
                 {...register("password", {
                   required: "Password is required",
                   pattern: {

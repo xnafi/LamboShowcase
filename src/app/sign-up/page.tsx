@@ -60,8 +60,8 @@ const SignUpPage = () => {
             fill
             sizes="100vw"
             style={{
-                objectFit: "cover",
-                transform : 'scaleX(-1)'
+              objectFit: "cover",
+              transform: "scaleX(-1)",
             }}
           />
         </div>
@@ -143,11 +143,11 @@ const SignUpPage = () => {
               </div>
             </div>
 
-            <div className="mb-4 text-lg">
+            <div className="mb-4 text-lg text-center">
               <input
                 className="rounded-3xl border-none bg-transparent bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
                 type="password"
-                placeholder="*********"
+                placeholder="Password"
                 {...register("password", {
                   required: "Password is required",
                   pattern: {
@@ -160,7 +160,7 @@ const SignUpPage = () => {
               />
               <div className="text-center">
                 {errors.password && (
-                  <span className="text-red-500 text-xs">
+                  <span className="text-red-500 text-xs text-wrap">
                     {errors.password.message}
                   </span>
                 )}
