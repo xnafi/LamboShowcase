@@ -8,6 +8,7 @@ import Features from "../Features/Features";
 
 import { ScrollProvider } from "../../utils/ScrollContext";
 import ScrollProgress from "@/utils/ScrollProgress";
+import OurLocation from "../OurLocation/OurLocation";
 
 const LandingPage = () => {
   return (
@@ -17,6 +18,7 @@ const LandingPage = () => {
       <ShowCaseItems />
       <About />
       <Features />
+      <OurLocation />
     </ScrollProvider>
   );
 };
