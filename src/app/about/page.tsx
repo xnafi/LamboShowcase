@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-// pages/about.tsx (assuming TypeScript)
 import Image from "next/image";
 import aboutImage from "../../assets/banner/shubham-sharan-6NqEMk91ayU-unsplash.jpg";
 

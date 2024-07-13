@@ -3,7 +3,6 @@ import React from "react";
 import { motion, useSpring, useTransform } from "framer-motion";
 import { useScrollProgress } from "./ScrollContext";
 
-
 const ScrollProgress = () => {
   const { scrollYProgress } = useScrollProgress();
 

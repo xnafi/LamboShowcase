@@ -6,7 +6,8 @@ import about1 from "../../../public/assets/about1.jpg";
 import about2 from "../../../public/assets/about2.jpg";
 import arrow from "../../../public/assets/arrow-up-left.png";
 import arrow2 from "../../../public/assets/arrow-up-right.png";
-import { useScrollProgress } from "@/utils/ScrollContext";
+import { useScrollProgress } from '../../utils/ScrollContext';
+
 
 export default function About() {
     const { scrollYProgress } = useScrollProgress();
