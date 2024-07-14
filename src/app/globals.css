@@ -30,7 +30,7 @@ html {
   overflow-y: scroll;
   transition-property: opacity, transform, filter, background;
   transition-timing-function: ease-in-out;
-  transition-duration: 1000ms;
+  transition-duration: 500ms;
 }
 
 element::-webkit-scrollbar {
