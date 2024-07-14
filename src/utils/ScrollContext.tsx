@@ -1,28 +1,26 @@
-"use client";
-import React, { createContext, useContext, useRef } from "react";
-import { useScroll, useSpring } from "framer-motion";
 
-const ScrollContext = createContext<any>(null);
+import React, { createContext, useContext, ReactNode } from "react";
+import { useScroll, MotionValue } from "framer-motion";
 
-export const useScrollProgress = () => useContext(ScrollContext);
+interface ScrollContextProps {
+  scrollYProgress: MotionValue<number>;
+}
 
-export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
-  const container = useRef<HTMLDivElement | null>(null);
+const ScrollContext = createContext<ScrollContextProps>({
+  scrollYProgress: { current: 0 } as unknown as MotionValue<number>,
+});
 
-  // useScroll hook provides the scrollYProgress motion value
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end end"],
-  });
-  const smoothProgress = useSpring(scrollYProgress, { mass: 0.01 });
+export const ScrollProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
+  const { scrollYProgress } = useScroll();
 
   return (
-    <ScrollContext.Provider
-      value={{ scrollYProgress, smoothProgress, container }}
-    >
-      <div ref={container} className="relative h-full">
-        {children}
-      </div>
+    <ScrollContext.Provider value={{ scrollYProgress }}>
+      {children}
     </ScrollContext.Provider>
   );
 };
+
+export const useScrollProgress = (): ScrollContextProps =>
+  useContext(ScrollContext);

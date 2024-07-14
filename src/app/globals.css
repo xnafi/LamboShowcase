@@ -23,10 +23,14 @@
   }
 }
 html {
+  width: 100vw;
   scroll-behavior: smooth;
-   -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll;
+  transition-property: opacity, transform, filter, background;
+  transition-timing-function: ease-in-out;
+  transition-duration: 1000ms;
 }
 
 element::-webkit-scrollbar {
@@ -95,7 +99,7 @@ html {
 
 /* login page bg */
 .loginBg {
-  background-image: url(../assets/loginPage.jpg);
+  background-image: url(../assets/car.png);
   background-position: center;
   background-repeat: no-repeat;
   width: 99vw;
@@ -147,3 +151,13 @@ html {
     transform: rotate(360deg);
   }
 }
+
+.page-transition {
+  opacity: 1;
+  background-image: url("../../public/assets/notFound.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translateY(100vh);
+}
+
+

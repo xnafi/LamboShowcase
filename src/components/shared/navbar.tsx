@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import logo from "../../assets/logoWhite.png";
+import { TransitionLink } from "@/utils/TranitionLink";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -98,13 +99,13 @@ const Navbar = () => {
           </div>
           <div className="flex-1 flex items-center justify-center mx-auto sm:items-stretch sm:justify-between w-full">
             <div className="flex-shrink-0">
-              <Link href="/" onClick={handleClose}>
+              <TransitionLink href="/" onClick={handleClose}>
                 <Image src={logo} alt="logo" height={100} width={100} />
-              </Link>
+              </TransitionLink>
             </div>
             <div className="hidden sm:flex sm:ml-2 justify-center items-center">
               <div className="flex md:space-x-0 lg:space-x-4 items-center">
-                <Link href="/home">
+                <TransitionLink href="/home">
                   <span
                     className={`px-3 py-2 rounded-md text-md font-medium ${
                       isActive("/home")
@@ -114,8 +115,8 @@ const Navbar = () => {
                   >
                     Home
                   </span>
-                </Link>
-                <Link href="/about">
+                </TransitionLink>
+                <TransitionLink href="/about">
                   <span
                     className={`px-3 py-2 rounded-md text-md font-medium ${
                       isActive("/about")
@@ -125,8 +126,8 @@ const Navbar = () => {
                   >
                     About
                   </span>
-                </Link>
-                <Link href="/contact">
+                </TransitionLink>
+                <TransitionLink href="/contact">
                   <span
                     className={`px-3 py-2 rounded-md text-md font-medium ${
                       isActive("/contact")
@@ -136,12 +137,12 @@ const Navbar = () => {
                   >
                     Contact
                   </span>
-                </Link>
+                </TransitionLink>
               </div>
             </div>
             <div className="hidden sm:flex sm:ml-2">
               <div className="flex md:space-x-0 lg:space-x-4 items-center">
-                <Link href="/login">
+                <TransitionLink href="/login">
                   <span
                     className={`px-3 py-2 rounded-md text-md font-medium ${
                       isActive("/login")
@@ -151,8 +152,8 @@ const Navbar = () => {
                   >
                     Login
                   </span>
-                </Link>
-                <Link href="/sign-up">
+                </TransitionLink>
+                <TransitionLink href="/sign-up">
                   <span
                     className={`px-3 py-2 rounded-md text-md font-medium ${
                       isActive("/sign-up")
@@ -162,7 +163,7 @@ const Navbar = () => {
                   >
                     Sign Up
                   </span>
-                </Link>
+                </TransitionLink>
               </div>
             </div>
           </div>
@@ -175,7 +176,7 @@ const Navbar = () => {
         className="sm:hidden overflow-hidden"
       >
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <Link href="/" onClick={handleClose}>
+          <TransitionLink href="/" onClick={handleClose}>
             <span
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 isActive("/")
@@ -185,8 +186,8 @@ const Navbar = () => {
             >
               Home
             </span>
-          </Link>
-          <Link href="/about" onClick={handleClose}>
+          </TransitionLink>
+          <TransitionLink href="/about" onClick={handleClose}>
             <span
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 isActive("/about")
@@ -196,9 +197,9 @@ const Navbar = () => {
             >
               About
             </span>
-          </Link>
+          </TransitionLink>
 
-          <Link href="/contact" onClick={handleClose}>
+          <TransitionLink href="/contact" onClick={handleClose}>
             <span
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 isActive("/contact")
@@ -208,8 +209,8 @@ const Navbar = () => {
             >
               Contact
             </span>
-          </Link>
-          <Link href="/login" onClick={handleClose}>
+          </TransitionLink>
+          <TransitionLink href="/login" onClick={handleClose}>
             <span
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 isActive("/login")
@@ -219,8 +220,8 @@ const Navbar = () => {
             >
               Login
             </span>
-          </Link>
-          <Link href="/sign-up" onClick={handleClose}>
+          </TransitionLink>
+          <TransitionLink href="/sign-up" onClick={handleClose}>
             <span
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 isActive("/sign-up")
@@ -230,7 +231,7 @@ const Navbar = () => {
             >
               Sign Up
             </span>
-          </Link>
+          </TransitionLink>
         </div>
       </motion.div>
     </motion.nav>

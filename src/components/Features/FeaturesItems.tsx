@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+
 import { motion, useTransform, useSpring, MotionValue } from "framer-motion";
 
 interface FeaturesItemsProps {

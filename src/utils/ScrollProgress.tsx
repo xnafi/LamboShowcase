@@ -1,24 +1,25 @@
-"use client";
 import React from "react";
-import { motion, useSpring, useTransform } from "framer-motion";
-import { useScrollProgress } from "./ScrollContext";
+import { motion, MotionValue } from "framer-motion";
 
-const ScrollProgress = () => {
-  const { scrollYProgress } = useScrollProgress();
+interface ScrollProgressProps {
+  scale: MotionValue<number>;
+  opacity: MotionValue<number>;
+  springScale: MotionValue<number>;
+  springOpacity: MotionValue<number>;
+  children: React.ReactNode;
+}
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
-  const springScale = useSpring(scale, { stiffness: 100, damping: 10 });
-  const springOpacity = useSpring(opacity, { stiffness: 100, damping: 10 });
-
+const ScrollProgress: React.FC<ScrollProgressProps> = ({
+  scale,
+  opacity,
+  springScale,
+  springOpacity,
+  children,
+}) => {
   return (
-    <motion.div
-      style={{
-        scale: springScale,
-        opacity: springOpacity,
-      }}
-      className="fixed top-0 left-0 right-0 h-2 bg-blue-500"
-    />
+    <motion.div style={{ scale: springScale, opacity: springOpacity }}>
+      {children}
+    </motion.div>
   );
 };
 
