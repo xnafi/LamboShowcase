@@ -153,11 +153,13 @@ html {
 }
 
 .page-transition {
-  opacity: 1;
-  background-image: url("../../public/assets/notFound.png");
+  opacity: 0.4;
+background: yellowgreen;
   background-repeat: no-repeat;
   background-position: center;
-  transform: translateY(100vh);
+  transform: translateY('40px');
+  filter: blur(12px);
 }
+
 
 

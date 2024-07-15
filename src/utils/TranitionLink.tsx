@@ -1,11 +1,12 @@
 "use client";
 import Link, { LinkProps } from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
 interface TransitionLinkProps extends LinkProps {
   children: React.ReactNode;
   href: string;
+  onClick?: () => void; // Add onClick prop
 }
 
 function sleep(ms: number): Promise<void> {
@@ -15,6 +16,7 @@ function sleep(ms: number): Promise<void> {
 export const TransitionLink: React.FC<TransitionLinkProps> = ({
   children,
   href,
+  onClick, // Destructure onClick
   ...props
 }) => {
   const router = useRouter();
@@ -32,6 +34,10 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
     await sleep(500);
 
     body?.classList.remove("page-transition");
+
+    if (onClick) {
+      onClick(); // Call onClick handler if provided
+    }
   };
 
   return (

@@ -170,6 +170,8 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* mobile */}
+
       <motion.div
         initial={{ height: 0 }}
         animate={{ height: isOpen ? "auto" : 0 }}
